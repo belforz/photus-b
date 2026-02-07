@@ -29,6 +29,24 @@ O principal objetivo do Photus B é identificar e linkar as fotos apuradas pelo 
 - **uv**: Gerenciador de pacotes rápido e eficiente para Python.
 - **TypeScript**: Utilizado em partes menores para interfaces ou scripts auxiliares, proporcionando tipagem estática onde necessário.
 
+## Licença
+
+Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+Copyright (c) 2025 Leo
+
+## Contribuição
+
+1. Faça um fork do repositório
+2. Crie uma branch de funcionalidade
+3. Faça suas alterações
+4. Adicione testes se aplicável
+5. Envie um pull request
+
+## Suporte
+
+Para problemas ou dúvidas, abra uma issue no repositório GitHub.
+*
 ---
 
 *Feito com ❤️ para processamento inteligente de linguagem natural e imagens.*
