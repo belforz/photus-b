@@ -1,0 +1,1 @@
+# for future use of BERTIMBAU from neuralmind https://huggingface.co/neuralmind/bert-base-portuguese-cased
