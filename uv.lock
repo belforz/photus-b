@@ -900,6 +900,7 @@ dependencies = [
     { name = "pydantic-settings" },
     { name = "sentence-transformers" },
     { name = "spacy" },
+    { name = "transformers" },
 ]
 
 [package.metadata]
@@ -909,6 +910,7 @@ requires-dist = [
     { name = "pydantic-settings", specifier = ">=2.13.1" },
     { name = "sentence-transformers", specifier = ">=5.2.3" },
     { name = "spacy", specifier = ">=3.8.11" },
+    { name = "transformers", specifier = ">=5.3.0" },
 ]
 
 [[package]]
