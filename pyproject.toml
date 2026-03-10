@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "loguru>=0.7.3",
     "mistralai>=1.12.4",
     "pip>=26.0.1",
     "pydantic-settings>=2.13.1",

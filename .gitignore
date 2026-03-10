@@ -12,3 +12,4 @@ wheels/
 .env.*
 *.key
 secrets/
+src/notebooks/remote_sentence_transformer.ipynb

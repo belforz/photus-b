@@ -25,7 +25,7 @@ As 15 âncoras formam o espaço latente distribuídas nestes eixos principais:
 
 ### 2. Extração Automática do "Eu" (100% Photus A / Visão Computacional)
 
-O EXIF foi totalmente descartado por ser volátil e falho. O "Eu" atua como um multiplicador de força ($W_{eu}$) baseado estritamente na gramática visual real extraída pelas matrizes do Photus A:
+O "Eu" atua como um multiplicador de força ($W_{eu}$) baseado estritamente na gramática visual real extraída pelas matrizes do Photus A:
 
 *   **Intimidade (Distância/Foco):** Calculada pela métrica `face.areaRatio` somada à razão de Bokeh (`face.sharpness` / `edgeDensityValue` global). Rosto grande com fundo matematicamente borrado eleva o peso para Conexão e Vulnerabilidade ($1.5x$). Planos abertos onde tudo está em foco reduzem o multiplicador e puxam para Distanciamento ou Paisagem ($0.7x$).
 *   **Empatia (Ângulo 3D):** Utiliza-se a detecção de *landmarks* faciais cruzada com algoritmos de pose estimation (ex: `solvePnP` do OpenCV) para extrair o *Pitch, Yaw e Roll* da cabeça. Câmera no nível dos olhos ($\pm 10^\circ$) valida Verdade e Sinceridade. Ângulos extremos identificados na geometria do rosto (Picado/Contrapicado) deslocam o score para Fragilidade ou Poder.

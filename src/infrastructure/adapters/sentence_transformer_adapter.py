@@ -4,7 +4,7 @@ from sentence_transformers import SentenceTransformer
 import numpy as np
 
 class SentenceTransformerAdapter:
-    def __init__(self, model_name: str = 'sentence-transformers/paraphrase-multilingual-mpnet-base-v2', prompt: str = ''):
+    def __init__(self, model_name: str = 'paraphrase-multilingual-MiniLM-L12-v2', prompt: str = None):
         self._model = SentenceTransformer(model_name)
         self.prompt = prompt
     
