@@ -1,18 +1,16 @@
 from dataclasses import dataclass
-from typing import List, Optional
+from typing import Optional
 
-from domain.entities.score import ScoreMetric
-from domain.entities.text_input import TextInput
+from src.domain.entities.score import Score
+from src.domain.entities.text_input import TextInput
 
 
 @dataclass(frozen=True)
 class Sentiment:
     """Represents the complete sentiment analysis for a text."""
 
-    score: ScoreMetric
-    label: str  # e.g., "Positive", "Negative", "Neutral"
-    text_input: Optional[TextInput] = str
-    emotion: Optional[str] = None  # e.g., "Joy", "Anger", "Surprise"
+    score: Score
+    label: str
+    text_input: Optional[TextInput] = None
+    emotion: Optional[str] = None
     cosine_similarity: Optional[float] = None
-
-    

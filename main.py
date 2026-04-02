@@ -12,9 +12,7 @@ def main():
     connector = SentenceTransformerAdapter()
     
     sentences = [
-    "The weather is lovely today.",
-    "It's so sunny outside!",
-    "He drove to the stadium."
+    "mostre a melhor foto melancolica"
 ]
     embeddings = connector.generate_embeddings(texts=sentences)
     for sentence in zip(sentences, embeddings):
