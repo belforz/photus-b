@@ -2,10 +2,14 @@ from typing import List, Union
 
 from sentence_transformers import SentenceTransformer
 import numpy as np
+from infrastructure.config.settings import AppSettings
+
+settings = AppSettings()
 
 class SentenceTransformerAdapter:
     def __init__(self, model_name: str = 'paraphrase-multilingual-MiniLM-L12-v2'):
-        self._model = SentenceTransformer(model_name)
+        self._model = SentenceTransformer(model_name, token=settings.HF_API_KEY)
+       
     
     def generate_embeddings(self, texts: Union[str, List[str]]) -> Union[np.ndarray, List[float]]:
         """ Generate embeddings for a single text or a list of texts
