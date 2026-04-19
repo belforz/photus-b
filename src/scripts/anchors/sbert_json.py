@@ -110,6 +110,52 @@ if __name__ == "__main__":
         "amigos juntos, dança, euforia, animado, desinibido, multidão feliz. "
         "encontro, bebida, show, rave, clube, farra, agito, turma reunida, comemoração."
     ),
+    "__tecnico__": (
+        # nomenclatura formal de câmera e óptica
+        "abertura, diafragma, f-stop, lente, milímetros, objetiva, focal, zoom, teleobjetiva, "
+        "grande angular, fisheye, macro, tilt-shift, prime, kit lens, bokeh, desfoque, "
+        "profundidade de campo, rasa, profunda, foco seletivo, foco suave, foco nítido. "
+
+        # exposição e luz técnica
+        "exposição, subexposto, superexposto, overexposed, underexposed, high key, low key, "
+        "histograma, zebra, clipping, queimado, estourado tecnicamente, recuperar sombras, "
+        "recuperar luzes, dynamic range, faixa dinâmica, latitude de exposição. "
+
+        # velocidade e movimento técnico
+        "velocidade do obturador, shutter speed, tempo de exposição, congelar movimento, "
+        "motion blur, rastro de luz, longa exposição, bulb, 1/1000, 1/500, 1/60, 30 segundos. "
+
+        # sensibilidade e ruído técnico
+        "ISO, sensibilidade, ruído digital, grain técnico, noise, redução de ruído, "
+        "ISO baixo, ISO alto, ISO nativo, clean ISO, sensor, full frame, crop, APS-C, micro quatro terços. "
+
+        # iluminação de estúdio e equipamento
+        "softbox, octobox, beauty dish, refletor, difusor, strobe, flash externo, speedlight, "
+        "luz contínua, LED, tungstênio, fluorescente, monolight, pack e cabeça, "
+        "luz principal, luz de preenchimento, contraluz, hair light, rim light, "
+        "razão de iluminação, Rembrandt, loop, split, butterfly, clamshell. "
+
+        # cor e temperatura técnica
+        "temperatura de cor, kelvin, balanço de branco, auto white balance, "
+        "luz fria, luz neutra, luz quente, daylight, tungsten, fluorescent, shade, cloudy, "
+        "matiz, viragem, LUT, perfil de cor, picture profile, log, flat, S-log, C-log. "
+
+        # pós-processamento e técnica digital
+        "raw, dng, jpeg, compressão, edição técnica, lightroom, capture one, darktable, "
+        "curva de tons, curva S, máscaras de luminância, dodge and burn, frequência de separação, "
+        "skin retouch, healing, clone stamp, redução de ruído técnica, sharpen, unsharp mask. "
+
+        # composição técnica
+        "regra dos terços, proporção áurea, linha do horizonte, ponto de fuga, "
+        "enquadramento, corte, crop técnico, proporção de aspecto, 16x9, 3x2, 4x5, quadrado. "
+
+        # descrições técnicas em linguagem informal de fotógrafo
+        "deixa o fundo borrado, fundo sumiu, fundo sumir, fundo desfocado, desfoca o fundo, "
+        "congelar o movimento, capturar o movimento, motion, rastro, blur intencional, "
+        "abertura bem aberta, abrir o diafragma, fechar o diafragma, expor para as sombras, "
+        "expor para as luzes, segurar as luzes, segurar as sombras, achatar a imagem, "
+        "imagem flat, tirar o contraste, forçar o ISO, subir o ISO, estourar o branco tecnicamente."
+    ),
 }
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
 output_filepath = os.path.join(project_root, "data/raw/knowledge_anchors.json")

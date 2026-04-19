@@ -8,11 +8,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 
-src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-if src_path not in sys.path:
-    sys.path.insert(0, src_path)
-
 from infrastructure.adapters.sentence_transformer_adapter import SentenceTransformerAdapter
+
+
 
 # ── Configuração ────────────────────────────────────────────────────────────────
 KNOWLEDGE_JSON = os.path.join(

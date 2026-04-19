@@ -3,7 +3,7 @@ import abc
 from typing import List
 from domain.entities.sentiment import Sentiment
 from domain.entities.tag import Tag
-from src.domain.entities import Classification, TextInput
+from domain.entities import TextInput
 
 class ITagger(ABC):
     @abstractmethod

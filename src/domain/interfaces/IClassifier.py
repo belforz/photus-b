@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
-import abc
-from src.domain.entities import Classification, TextInput
+from domain.entities import Classification, TextInput
 
 class IClassifier(ABC):
     @abstractmethod

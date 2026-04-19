@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 import abc
 from domain.entities.sentiment import Sentiment
-from src.domain.entities import Classification, TextInput
+from domain.entities import  TextInput
 
 class ISentimentRules(ABC):
     @abstractmethod
