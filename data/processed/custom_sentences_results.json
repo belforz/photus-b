@@ -1,0 +1,124 @@
+{
+  "results": [
+    {
+      "text": "Queria uma foto que passasse uma vibe meio triste, daquelas que a pessoa parece estar se sentindo totalmente sozinha no mundo.",
+      "top": [
+        {
+          "score": 0.6537465453147888,
+          "anchor_id": "Distanciamento (Low-key)",
+          "anchor_phrase": "sensação de solidão, ninguém por perto, ambiente opressivo, luz baixa e dura"
+        },
+        {
+          "score": 0.6038154363632202,
+          "anchor_id": "Conflito (Caos)",
+          "anchor_phrase": "sensação de conflito, ambiente carregado, cena pesada, perturbador visualmente"
+        },
+        {
+          "score": 0.4882200062274933,
+          "anchor_id": "Simplicidade (Cotidiano)",
+          "anchor_phrase": "foto comum do dia a dia, sem produção"
+        },
+        {
+          "score": 0.47708660364151,
+          "anchor_id": "Conexão (Close-up)",
+          "anchor_phrase": "foto de rosto bem de perto"
+        },
+        {
+          "score": 0.4699455201625824,
+          "anchor_id": "Solenidade (Estase)",
+          "anchor_phrase": "sem bagunça, sem movimento, tudo no lugar, paz visual, elegante e contido"
+        }
+      ]
+    },
+    {
+      "text": "Sabe aquela foto de perfil profissional que passa bastante confiança, mas sem a pessoa parecer arrogante? É pra colocar no currículo.",
+      "top": [
+        {
+          "score": 0.5671854615211487,
+          "anchor_id": "Corporativo (Focado)",
+          "anchor_phrase": "imagem de executivo, chefe, funcionário, empresário, headshot, foto de perfil profissional"
+        },
+        {
+          "score": 0.3688112199306488,
+          "anchor_id": "Conexão (Close-up)",
+          "anchor_phrase": "sorriso, olhar, expressão humana, pele"
+        },
+        {
+          "score": 0.2782060503959656,
+          "anchor_id": "Conflito (Caos)",
+          "anchor_phrase": "foto de confusão e desordem"
+        },
+        {
+          "score": 0.24331463873386383,
+          "anchor_id": "Nostalgia (Analógico)",
+          "anchor_phrase": "fotografia com cara de antiga, velha, de outro tempo"
+        },
+        {
+          "score": 0.22532761096954346,
+          "anchor_id": "Vitalidade (Ação)",
+          "anchor_phrase": "foto com ação e movimento"
+        }
+      ]
+    },
+    {
+      "text": "Tô procurando umas fotos super animadas, tipo energia de fim de festa com todo mundo junto, feliz e pulando.",
+      "top": [
+        {
+          "score": 0.6342383027076721,
+          "anchor_id": "Noturno (Festa)",
+          "anchor_phrase": "amigos juntos, dança, euforia, animado, desinibido, multidão feliz"
+        },
+        {
+          "score": 0.5829209685325623,
+          "anchor_id": "Vitalidade (Ação)",
+          "anchor_phrase": "foto com ação e movimento"
+        },
+        {
+          "score": 0.47423356771469116,
+          "anchor_id": "Sublime (Paisagem)",
+          "anchor_phrase": "épico, grandioso, majestoso, tirar o fôlego, imensurável, contemplativo"
+        },
+        {
+          "score": 0.4528425335884094,
+          "anchor_id": "Simplicidade (Cotidiano)",
+          "anchor_phrase": "foto comum do dia a dia, sem produção"
+        },
+        {
+          "score": 0.4507896900177002,
+          "anchor_id": "Conflito (Caos)",
+          "anchor_phrase": "foto de confusão e desordem"
+        }
+      ]
+    },
+    {
+      "text": "Quero umas fotos bem naturais aqui de casa, tipo vida real mesmo, sem filtro de Instagram e sem ninguém fazendo pose forçada.",
+      "top": [
+        {
+          "score": 0.6229586005210876,
+          "anchor_id": "Simplicidade (Cotidiano)",
+          "anchor_phrase": "foto comum do dia a dia, sem produção"
+        },
+        {
+          "score": 0.5026378035545349,
+          "anchor_id": "Vitalidade (Ação)",
+          "anchor_phrase": "foto com ação e movimento"
+        },
+        {
+          "score": 0.49039891362190247,
+          "anchor_id": "Solenidade (Estase)",
+          "anchor_phrase": "foto parada e silenciosa"
+        },
+        {
+          "score": 0.4696635901927948,
+          "anchor_id": "Corporativo (Focado)",
+          "anchor_phrase": "foto profissional para currículo, linkedin ou apresentação de trabalho"
+        },
+        {
+          "score": 0.4379711449146271,
+          "anchor_id": "Sublime (Paisagem)",
+          "anchor_phrase": "foto de paisagem enorme e impressionante"
+        }
+      ]
+    }
+  ]
+}

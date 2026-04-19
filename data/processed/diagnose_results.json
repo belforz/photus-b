@@ -1,0 +1,151 @@
+{
+  "summary": {
+    "checked": 10,
+    "nan": 0,
+    "zero_norm": 0,
+    "wrong_dim": 0,
+    "low_std": 0
+  },
+  "results": [
+    {
+      "id": "Solenidade (Estase)",
+      "phrase": "Simetria rígida, fundo limpo e minimalista, iluminação suave e equilibrada, cores neutras, estático e pacífico",
+      "stats": {
+        "len": 384,
+        "mean": -0.0001187735016780304,
+        "std": 0.21391201652696426,
+        "norm": 4.191802968886102,
+        "min": -0.6722974181175232,
+        "max": 0.5521482825279236,
+        "any_nan": false
+      },
+      "issues": []
+    },
+    {
+      "id": "Conexão (Close-up)",
+      "phrase": "Sorriso aberto, retrato bem próximo, foco extremo nos olhos, pele nítida, amigável, calor humano, proximidade",
+      "stats": {
+        "len": 384,
+        "mean": 0.00017695228909057428,
+        "std": 0.2259706580287318,
+        "norm": 4.428103829765903,
+        "min": -0.6758176684379578,
+        "max": 0.6159248352050781,
+        "any_nan": false
+      },
+      "issues": []
+    },
+    {
+      "id": "Conflito (Caos)",
+      "phrase": "Sujeira urbana, texturas ásperas e arranhadas, multidão desordenada, cena de rua confusa, poluição visual extrema",
+      "stats": {
+        "len": 384,
+        "mean": -0.0006730852296641388,
+        "std": 0.22309504160625757,
+        "norm": 4.371772025515659,
+        "min": -0.6902692914009094,
+        "max": 0.6547515392303467,
+        "any_nan": false
+      },
+      "issues": []
+    },
+    {
+      "id": "Simplicidade (Cotidiano)",
+      "phrase": "Iluminação natural de janela, saturação média, baixo contraste, ambiente doméstico ordinário, textura comum",
+      "stats": {
+        "len": 384,
+        "mean": -0.00018929688023187433,
+        "std": 0.220650833815283,
+        "norm": 4.32385722450781,
+        "min": -0.7381768822669983,
+        "max": 0.6655575037002563,
+        "any_nan": false
+      },
+      "issues": []
+    },
+    {
+      "id": "Corporativo (Focado)",
+      "phrase": "Retrato profissional, pessoa focada, fundo liso ou levemente desfocado, iluminação de estúdio neutra e limpa",
+      "stats": {
+        "len": 384,
+        "mean": 0.0001235413647009409,
+        "std": 0.1758348485542366,
+        "norm": 3.4456461141224417,
+        "min": -0.5058930516242981,
+        "max": 0.48228687047958374,
+        "any_nan": false
+      },
+      "issues": []
+    },
+    {
+      "id": "Vitalidade (Ação)",
+      "phrase": "Movimento atlético congelado, salto ou corrida, suor visível, luz solar direta e dura, cores primárias saturadas, composição dinâmica e assimétrica, esporte ao ar livre, instante de esforço físico, velocidade capturada, adrenalina visual",
+      "stats": {
+        "len": 384,
+        "mean": 2.2873915289286137e-06,
+        "std": 0.19723934585106934,
+        "norm": 3.8650860365435755,
+        "min": -0.5651392936706543,
+        "max": 0.5565281510353088,
+        "any_nan": false
+      },
+      "issues": []
+    },
+    {
+      "id": "Distanciamento (Low-key)",
+      "phrase": "Corredor vazio e sem fim, concreto cinza desgastado, ausência total de pessoas, abandono urbano, sombra dura e artificial, figura encolhida de costas ignorada pelo ambiente, silêncio visual, frieza emocional, isolamento em cenário construído e desolado",
+      "stats": {
+        "len": 384,
+        "mean": -0.0002593963381514186,
+        "std": 0.20350571741247075,
+        "norm": 3.987884578760206,
+        "min": -0.5831979513168335,
+        "max": 0.8708104491233826,
+        "any_nan": false
+      },
+      "issues": []
+    },
+    {
+      "id": "Sublime (Paisagem)",
+      "phrase": "Natureza selvagem e intocada, montanha ou oceano imensurável, pôr do sol dramático, sujeito humano minúsculo diante da grandiosidade natural, maravilhamento e reverência, céu com nuvens épicas, horizonte infinito, exposição perfeita de paisagem, tirar o fôlego",
+      "stats": {
+        "len": 384,
+        "mean": -0.001054781280648361,
+        "std": 0.18373935596186525,
+        "norm": 3.6006006695060084,
+        "min": -0.6136370897293091,
+        "max": 0.539700984954834,
+        "any_nan": false
+      },
+      "issues": []
+    },
+    {
+      "id": "Nostalgia (Analógico)",
+      "phrase": "Fotografia revelada em filme de 35mm, grain analógico visível, borda de foto polaroid, estética de década de 70 ou 80, cores desbotadas pelo envelhecimento químico, objeto antigo fotografado, memória afetiva, câmera de rolo, revelação manual, retrô documental",
+      "stats": {
+        "len": 384,
+        "mean": -0.00012159310987650922,
+        "std": 0.184864966901734,
+        "norm": 3.6225995054140356,
+        "min": -0.49173277616500854,
+        "max": 0.4745394289493561,
+        "any_nan": false
+      },
+      "issues": []
+    },
+    {
+      "id": "Noturno (Festa)",
+      "phrase": "Multidão dançando em espaço fechado, rostos suados e sorridentes, celebração coletiva, grupo de pessoas em festa, movimento social e desinibido, ambiente de clube ou balada, interação entre desconhecidos, euforia compartilhada, noite como evento social, bebida, música implícita, corpos próximos",
+      "stats": {
+        "len": 384,
+        "mean": -0.0003147578358948522,
+        "std": 0.2031382450808197,
+        "norm": 3.9806851600964377,
+        "min": -0.6199216246604919,
+        "max": 0.6761502623558044,
+        "any_nan": false
+      },
+      "issues": []
+    }
+  ]
+}
