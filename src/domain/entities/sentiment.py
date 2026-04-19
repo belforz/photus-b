@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from typing import Optional
 
-from src.domain.entities.score import Score
-from src.domain.entities.text_input import TextInput
+from domain.entities.score import Score
+from domain.entities.text_input import TextInput
 
 
 @dataclass(frozen=True)

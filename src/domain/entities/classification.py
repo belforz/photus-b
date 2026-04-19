@@ -1,10 +1,10 @@
 from dataclasses import dataclass, field
 from typing import List, Optional
 
-from src.domain.entities.sentiment import Sentiment
-from src.domain.entities.tag import Tag
-from src.domain.entities.text_input import TextInput
-from src.domain.entities.route_result import RouteResult
+from domain.entities.sentiment import Sentiment
+from domain.entities.tag import Tag
+from domain.entities.text_input import TextInput
+from domain.entities.route_result import RouteResult
 
 
 @dataclass()
