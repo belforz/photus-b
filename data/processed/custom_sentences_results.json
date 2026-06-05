@@ -1,135 +1,135 @@
 {
   "results": [
     {
-      "text": "Busco capturas em low-key, com alto contraste e subexposição intencional para criar uma atmosfera dramática nas sombras.",
+      "text": "quero uma foto com aquela cara de câmera profissional sabe, tipo bem produzida",
       "top": [
-        {
-          "anchor_id": "Vitalidade (Ação)",
-          "anchor_phrase": "foto clara, branca, superexposta, lavada de luz, high key, muito brilho, estourou de branco, claridade extrema, tudo iluminado, sem sombra",
-          "score": 0.5485847592353821
-        },
-        {
-          "anchor_id": "Distanciamento (Low-key)",
-          "anchor_phrase": "foto escura, sombria e pesada",
-          "score": 0.5469622611999512
-        },
-        {
-          "anchor_id": "Simplicidade (Cotidiano)",
-          "anchor_phrase": "luz de janela, cena ordinária, momento espontâneo, vida real sem filtro",
-          "score": 0.5327553153038025
-        },
-        {
-          "anchor_id": "__tecnico__",
-          "anchor_phrase": "deixa o fundo borrado, fundo sumiu, fundo sumir, fundo desfocado, desfoca o fundo, congelar o movimento, capturar o movimento, motion, rastro, blur intencional, abertura bem aberta, abrir o diafragma, fechar o diafragma, expor para as sombras, expor para as luzes, segurar as luzes, segurar as sombras, achatar a imagem, imagem flat, tirar o contraste, forçar o ISO, subir o ISO, estourar o branco tecnicamente",
-          "score": 0.5259996056556702
-        },
-        {
-          "anchor_id": "Conflito (Caos)",
-          "anchor_phrase": "foto de confusão e desordem",
-          "score": 0.4488528072834015
-        }
-      ],
-      "technical": true,
-      "technical_score": 0.5259996056556702,
-      "mistral_response": "ENTENDIDO"
-    },
-    {
-      "text": "Preciso de imagens com profundidade de campo rasa, abertura em f/1.4 para isolar o assunto com um bokeh bem suave no fundo.",
-      "top": [
-        {
-          "anchor_id": "Distanciamento (Low-key)",
-          "anchor_phrase": "foto escura, sombria e pesada",
-          "score": 0.5161822438240051
-        },
-        {
-          "anchor_id": "__tecnico__",
-          "anchor_phrase": "abertura, diafragma, f-stop, lente, milímetros, objetiva, focal, zoom, teleobjetiva, grande angular, fisheye, macro, tilt-shift, prime, kit lens, bokeh, desfoque, profundidade de campo, rasa, profunda, foco seletivo, foco suave, foco nítido",
-          "score": 0.48275041580200195
-        },
-        {
-          "anchor_id": "Vitalidade (Ação)",
-          "anchor_phrase": "foto clara, branca, superexposta, lavada de luz, high key, muito brilho, estourou de branco, claridade extrema, tudo iluminado, sem sombra",
-          "score": 0.4766704738140106
-        },
-        {
-          "anchor_id": "Conflito (Caos)",
-          "anchor_phrase": "foto de confusão e desordem",
-          "score": 0.47552889585494995
-        },
         {
           "anchor_id": "Conexão (Close-up)",
           "anchor_phrase": "foto de rosto bem de perto",
-          "score": 0.4627625048160553
-        }
-      ],
-      "technical": true,
-      "technical_score": 0.48275041580200195,
-      "mistral_response": "ENTENDIDO"
-    },
-    {
-      "text": "Quero arquivos onde a velocidade do obturador foi alta o suficiente para congelar perfeitamente o movimento do assunto no ápice da ação.",
-      "top": [
+          "score": 0.7052765488624573
+        },
         {
-          "anchor_id": "__tecnico__",
-          "anchor_phrase": "velocidade do obturador, shutter speed, tempo de exposição, congelar movimento, motion blur, rastro de luz, longa exposição, bulb, 1/1000, 1/500, 1/60, 30 segundos",
-          "score": 0.6266332864761353
+          "anchor_id": "Corporativo (Focado)",
+          "anchor_phrase": "imagem de executivo, chefe, funcionário, empresário, headshot, foto de perfil profissional",
+          "score": 0.6468671560287476
+        },
+        {
+          "anchor_id": "Nostalgia (Analógico)",
+          "anchor_phrase": "fotografia com cara de antiga, velha, de outro tempo",
+          "score": 0.6000238656997681
         },
         {
           "anchor_id": "Vitalidade (Ação)",
           "anchor_phrase": "foto com ação e movimento",
-          "score": 0.44914665818214417
+          "score": 0.5645709037780762
+        },
+        {
+          "anchor_id": "Simplicidade (Cotidiano)",
+          "anchor_phrase": "foto comum do dia a dia, sem produção",
+          "score": 0.5273120403289795
+        }
+      ],
+      "technical": false,
+      "technical_score": 0.3789154589176178,
+      "mistral_response": null
+    },
+    {
+      "text": "f/1.8, ISO 800, 1/500s",
+      "top": [
+        {
+          "anchor_id": "__tecnico__",
+          "anchor_phrase": "ISO, sensibilidade, ruído digital, grain técnico, noise, redução de ruído, ISO baixo, ISO alto, ISO nativo, clean ISO, sensor, full frame, crop, APS-C, micro quatro terços",
+          "score": 0.4205140471458435
         },
         {
           "anchor_id": "Nostalgia (Analógico)",
           "anchor_phrase": "película, polaroid, filme de 35mm",
-          "score": 0.3473189175128937
+          "score": 0.30876457691192627
         },
         {
-          "anchor_id": "Solenidade (Estase)",
-          "anchor_phrase": "foto parada e silenciosa",
-          "score": 0.3085482120513916
+          "anchor_id": "Vitalidade (Ação)",
+          "anchor_phrase": "foto clara, branca, superexposta, lavada de luz, high key, muito brilho, estourou de branco, claridade extrema, tudo iluminado, sem sombra",
+          "score": 0.23655810952186584
+        },
+        {
+          "anchor_id": "Simplicidade (Cotidiano)",
+          "anchor_phrase": "foto comum do dia a dia, sem produção",
+          "score": 0.15090778470039368
         },
         {
           "anchor_id": "Sublime (Paisagem)",
           "anchor_phrase": "foto de paisagem enorme e impressionante",
-          "score": 0.24998223781585693
+          "score": 0.1479434370994568
         }
       ],
       "technical": true,
-      "technical_score": 0.6266332864761353,
+      "technical_score": 1.0,
       "mistral_response": "ENTENDIDO"
     },
     {
-      "text": "Procuro uma iluminação flat e high-key, sem sombras duras no rosto, garantindo uma leitura limpa e simétrica da expressão.",
+      "text": "preciso de longa exposição com ND1000 para suavizar a água em 30 segundos de abertura",
       "top": [
+        {
+          "anchor_id": "__tecnico__",
+          "anchor_phrase": "velocidade do obturador, shutter speed, tempo de exposição, congelar movimento, motion blur, rastro de luz, longa exposição, bulb, 1/1000, 1/500, 1/60, 30 segundos",
+          "score": 0.5114029049873352
+        },
+        {
+          "anchor_id": "Nostalgia (Analógico)",
+          "anchor_phrase": "película, polaroid, filme de 35mm",
+          "score": 0.20421749353408813
+        },
         {
           "anchor_id": "Vitalidade (Ação)",
           "anchor_phrase": "foto clara, branca, superexposta, lavada de luz, high key, muito brilho, estourou de branco, claridade extrema, tudo iluminado, sem sombra",
-          "score": 0.6368190050125122
+          "score": 0.1576935052871704
+        },
+        {
+          "anchor_id": "Solenidade (Estase)",
+          "anchor_phrase": "foto parada e silenciosa",
+          "score": 0.11677779257297516
         },
         {
           "anchor_id": "Simplicidade (Cotidiano)",
           "anchor_phrase": "luz de janela, cena ordinária, momento espontâneo, vida real sem filtro",
-          "score": 0.5377230048179626
-        },
-        {
-          "anchor_id": "__tecnico__",
-          "anchor_phrase": "softbox, octobox, beauty dish, refletor, difusor, strobe, flash externo, speedlight, luz contínua, LED, tungstênio, fluorescente, monolight, pack e cabeça, luz principal, luz de preenchimento, contraluz, hair light, rim light, razão de iluminação, Rembrandt, loop, split, butterfly, clamshell",
-          "score": 0.501170814037323
-        },
-        {
-          "anchor_id": "Distanciamento (Low-key)",
-          "anchor_phrase": "foto escura, sombria e pesada",
-          "score": 0.4646911323070526
-        },
-        {
-          "anchor_id": "Solenidade (Estase)",
-          "anchor_phrase": "sem bagunça, sem movimento, tudo no lugar, paz visual, elegante e contido",
-          "score": 0.42703819274902344
+          "score": 0.10934298485517502
         }
       ],
       "technical": true,
-      "technical_score": 0.501170814037323,
+      "technical_score": 0.5114029049873352,
+      "mistral_response": "ENTENDIDO"
+    },
+    {
+      "text": "quero que o fundo suma e o rosto fique bem nítido, tipo aquelas fotos de revista",
+      "top": [
+        {
+          "anchor_id": "Conexão (Close-up)",
+          "anchor_phrase": "foto de rosto bem de perto",
+          "score": 0.6196915507316589
+        },
+        {
+          "anchor_id": "__tecnico__",
+          "anchor_phrase": "raw, dng, jpeg, compressão, edição técnica, lightroom, capture one, darktable, curva de tons, curva S, máscaras de luminância, dodge and burn, frequência de separação, skin retouch, healing, clone stamp, redução de ruído técnica, sharpen, unsharp mask",
+          "score": 0.5125195384025574
+        },
+        {
+          "anchor_id": "Vitalidade (Ação)",
+          "anchor_phrase": "foto clara, branca, superexposta, lavada de luz, high key, muito brilho, estourou de branco, claridade extrema, tudo iluminado, sem sombra",
+          "score": 0.4945320188999176
+        },
+        {
+          "anchor_id": "Corporativo (Focado)",
+          "anchor_phrase": "foto profissional para currículo, linkedin ou apresentação de trabalho",
+          "score": 0.46881103515625
+        },
+        {
+          "anchor_id": "Conflito (Caos)",
+          "anchor_phrase": "foto de confusão e desordem",
+          "score": 0.4639125466346741
+        }
+      ],
+      "technical": true,
+      "technical_score": 0.5125195384025574,
       "mistral_response": "ENTENDIDO"
     }
   ]

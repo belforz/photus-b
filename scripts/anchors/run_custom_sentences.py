@@ -3,6 +3,7 @@
 import json
 import math
 import os
+import re
 import sys
 from typing import List, Optional
 
@@ -65,8 +66,14 @@ def rank_anchors(emb: list, anchors: dict) -> list[dict]:
             best[aid] = {"anchor_id": aid, "anchor_phrase": phrase, "score": score}
     return sorted(best.values(), key=lambda x: x["score"], reverse=True)
 
+REGEX_PARAMETRO_PURO = re.compile(
+    r"\b(f/\d[\d.]*|iso\s?\d{2,6}|\d+/\d+s?)\b",
+    re.IGNORECASE
+)
 
-def is_technical(ranked: list[dict]) -> tuple[bool, float]:
+def is_technical(text: str, ranked: list[dict]) -> tuple[bool, float]:
+    if REGEX_PARAMETRO_PURO.search(text):
+        return True, 1.0
     score_tecnico = next(
         (r["score"] for r in ranked if r["anchor_id"] == "__tecnico__"), 0.0
     )
@@ -122,7 +129,7 @@ def main(
     for sentence, emb in zip(texts, embeddings):
         ranked = rank_anchors(emb, anchors)
         top5 = ranked[:5]
-        technical, tech_score = is_technical(ranked)
+        technical, tech_score = is_technical(sentence,ranked)
 
         # --- display ---
         print("\n---")
