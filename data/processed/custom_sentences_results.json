@@ -1,136 +1,37 @@
 {
   "results": [
     {
-      "text": "quero uma foto com aquela cara de câmera profissional sabe, tipo bem produzida",
+      "text": "mostre a melhor foto melancolica",
       "top": [
         {
           "anchor_id": "Conexão (Close-up)",
-          "anchor_phrase": "foto de rosto bem de perto",
-          "score": 0.7052765488624573
+          "anchor_phrase": "foto de rosto humano em plano fechado, close extremo, sorriso, olhar direto, expressão emocional",
+          "score": 0.5831145644187927
         },
         {
-          "anchor_id": "Corporativo (Focado)",
-          "anchor_phrase": "imagem de executivo, chefe, funcionário, empresário, headshot, foto de perfil profissional",
-          "score": 0.6468671560287476
+          "anchor_id": "Distanciamento (Low-key)",
+          "anchor_phrase": "foto escura, sombria e pesada",
+          "score": 0.552653431892395
         },
         {
           "anchor_id": "Nostalgia (Analógico)",
           "anchor_phrase": "fotografia com cara de antiga, velha, de outro tempo",
-          "score": 0.6000238656997681
+          "score": 0.5343046188354492
         },
         {
-          "anchor_id": "Vitalidade (Ação)",
-          "anchor_phrase": "foto com ação e movimento",
-          "score": 0.5645709037780762
-        },
-        {
-          "anchor_id": "Simplicidade (Cotidiano)",
-          "anchor_phrase": "foto comum do dia a dia, sem produção",
-          "score": 0.5273120403289795
-        }
-      ],
-      "technical": false,
-      "technical_score": 0.3789154589176178,
-      "mistral_response": null
-    },
-    {
-      "text": "f/1.8, ISO 800, 1/500s",
-      "top": [
-        {
-          "anchor_id": "__tecnico__",
-          "anchor_phrase": "ISO, sensibilidade, ruído digital, grain técnico, noise, redução de ruído, ISO baixo, ISO alto, ISO nativo, clean ISO, sensor, full frame, crop, APS-C, micro quatro terços",
-          "score": 0.4205140471458435
-        },
-        {
-          "anchor_id": "Nostalgia (Analógico)",
-          "anchor_phrase": "película, polaroid, filme de 35mm",
-          "score": 0.30876457691192627
-        },
-        {
-          "anchor_id": "Vitalidade (Ação)",
-          "anchor_phrase": "foto clara, branca, superexposta, lavada de luz, high key, muito brilho, estourou de branco, claridade extrema, tudo iluminado, sem sombra",
-          "score": 0.23655810952186584
-        },
-        {
-          "anchor_id": "Simplicidade (Cotidiano)",
-          "anchor_phrase": "foto comum do dia a dia, sem produção",
-          "score": 0.15090778470039368
-        },
-        {
-          "anchor_id": "Sublime (Paisagem)",
-          "anchor_phrase": "foto de paisagem enorme e impressionante",
-          "score": 0.1479434370994568
-        }
-      ],
-      "technical": true,
-      "technical_score": 1.0,
-      "mistral_response": "ENTENDIDO"
-    },
-    {
-      "text": "preciso de longa exposição com ND1000 para suavizar a água em 30 segundos de abertura",
-      "top": [
-        {
-          "anchor_id": "__tecnico__",
-          "anchor_phrase": "velocidade do obturador, shutter speed, tempo de exposição, congelar movimento, motion blur, rastro de luz, longa exposição, bulb, 1/1000, 1/500, 1/60, 30 segundos",
-          "score": 0.5114029049873352
-        },
-        {
-          "anchor_id": "Nostalgia (Analógico)",
-          "anchor_phrase": "película, polaroid, filme de 35mm",
-          "score": 0.20421749353408813
-        },
-        {
-          "anchor_id": "Vitalidade (Ação)",
-          "anchor_phrase": "foto clara, branca, superexposta, lavada de luz, high key, muito brilho, estourou de branco, claridade extrema, tudo iluminado, sem sombra",
-          "score": 0.1576935052871704
-        },
-        {
-          "anchor_id": "Solenidade (Estase)",
-          "anchor_phrase": "foto parada e silenciosa",
-          "score": 0.11677779257297516
-        },
-        {
-          "anchor_id": "Simplicidade (Cotidiano)",
-          "anchor_phrase": "luz de janela, cena ordinária, momento espontâneo, vida real sem filtro",
-          "score": 0.10934298485517502
-        }
-      ],
-      "technical": true,
-      "technical_score": 0.5114029049873352,
-      "mistral_response": "ENTENDIDO"
-    },
-    {
-      "text": "quero que o fundo suma e o rosto fique bem nítido, tipo aquelas fotos de revista",
-      "top": [
-        {
-          "anchor_id": "Conexão (Close-up)",
-          "anchor_phrase": "foto de rosto bem de perto",
-          "score": 0.6196915507316589
-        },
-        {
-          "anchor_id": "__tecnico__",
-          "anchor_phrase": "raw, dng, jpeg, compressão, edição técnica, lightroom, capture one, darktable, curva de tons, curva S, máscaras de luminância, dodge and burn, frequência de separação, skin retouch, healing, clone stamp, redução de ruído técnica, sharpen, unsharp mask",
-          "score": 0.5125195384025574
-        },
-        {
-          "anchor_id": "Vitalidade (Ação)",
-          "anchor_phrase": "foto clara, branca, superexposta, lavada de luz, high key, muito brilho, estourou de branco, claridade extrema, tudo iluminado, sem sombra",
-          "score": 0.4945320188999176
-        },
-        {
-          "anchor_id": "Corporativo (Focado)",
-          "anchor_phrase": "foto profissional para currículo, linkedin ou apresentação de trabalho",
-          "score": 0.46881103515625
+          "anchor_id": "Noturno (Festa)",
+          "anchor_phrase": "foto de festa, balada, celebração, evento social à noite",
+          "score": 0.5059172511100769
         },
         {
           "anchor_id": "Conflito (Caos)",
-          "anchor_phrase": "foto de confusão e desordem",
-          "score": 0.4639125466346741
+          "anchor_phrase": "sensação de conflito, ambiente carregado, cena pesada, perturbador visualmente",
+          "score": 0.49581605195999146
         }
       ],
-      "technical": true,
-      "technical_score": 0.5125195384025574,
-      "mistral_response": "ENTENDIDO"
+      "technical": false,
+      "technical_score": 0.2785519063472748,
+      "mistral_response": null
     }
   ]
 }

@@ -1,38 +1,30 @@
-import sys
+"""Entry point: serves the Photus B categorization API over HTTP.
+
+POST /v1/categorize {"text": "..."} -> category, category_code, confidence, ...
+"""
 import os
+import sys
 
-from infrastructure.adapters.sentence_transformer_adapter import SentenceTransformerAdapter
+ROOT = os.path.dirname(os.path.abspath(__file__))
+SRC_DIR = os.path.join(ROOT, "src")
+sys.path.append(SRC_DIR)
 
+# Reload workers spawn fresh processes that re-import by module path (not by
+# re-running this file), so they need SRC_DIR on PYTHONPATH too.
+existing_pythonpath = os.environ.get("PYTHONPATH", "")
+os.environ["PYTHONPATH"] = os.pathsep.join(p for p in (SRC_DIR, existing_pythonpath) if p)
 
-def _format_embedding(embed, preview_len: int = 8) -> str:
-    try:
-        vals = list(embed)
-    except Exception:
-        vals = embed
-    total = len(vals)
-    preview = ", ".join(f"{v:.6f}" for v in vals[:preview_len])
-    suffix = ", ..." if total > preview_len else ""
-    return f"[{preview}{suffix}] (len={total})"
+from presentation.api.app import app  # noqa: E402  (import after sys.path setup)
 
-
-def main():
-    connector = SentenceTransformerAdapter()
-
-    sentences = [
-        "mostre a melhor foto melancolica",
-    ]
-
-    try:
-        embeddings = connector.generate_embeddings(texts=sentences)
-    except Exception as e:
-        print("Erro ao gerar embeddings:", e)
-        return
-
-    for text, emb in zip(sentences, embeddings):
-        print("Texto:", text)
-        print("Embedding preview:", _format_embedding(emb))
-        print()
+__all__ = ["app"]
 
 
 if __name__ == "__main__":
-    main()
+    import uvicorn
+
+    uvicorn.run(
+        "presentation.api.app:app",
+        host=os.getenv("HOST", "0.0.0.0"),
+        port=int(os.getenv("PORT", "8000")),
+        reload=os.getenv("RELOAD", "false").lower() == "true",
+    )

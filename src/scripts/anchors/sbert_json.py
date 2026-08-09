@@ -50,10 +50,11 @@ def export_knowledge_anchors_to_json(anchors_dict:dict, output_filepath: str, mo
 if __name__ == "__main__":
    anchors = anchors = {
     "Vitalidade (Ação)": (
-    "foto com ação e movimento. esporte, corrida, salto, esforço físico. "
+    "foto de esporte com ação e movimento físico intenso. corrida, salto, esforço."
     "atlético, dinâmico, adrenalina, suor, força, intenso. "
     "foto clara, branca, superexposta, lavada de luz, high key, muito brilho, "  # <-- exclusivo
-    "estourou de branco, claridade extrema, tudo iluminado, sem sombra."           # <-- exclusivo
+    "estourou de branco, claridade extrema, tudo iluminado, sem sombra. "           # <-- exclusivo
+    "cores vibrantes, saturadas, cena com energia e movimento."                    # <-- novo
 ),
     
     "Solenidade (Estase)": (
@@ -63,7 +64,7 @@ if __name__ == "__main__":
     ),
 
     "Conexão (Close-up)": (
-        "foto de rosto bem de perto. sorriso, olhar, expressão humana, pele. "
+        "foto de rosto humano em plano fechado, close extremo, sorriso, olhar direto, expressão emocional. "
         "feliz, alegre, acolhedor, caloroso, amigável, empático, íntimo, carinhoso. "
         "aproximação, afeto, presença humana, emoção no rosto, calor humano."
     ),
@@ -81,7 +82,7 @@ if __name__ == "__main__":
     ),
 
     "Conflito (Caos)": (
-        "foto de confusão e desordem. rua suja, multidão agitada, cena caótica, tensão. "
+        "foto de confusão e desordem urbana, rua suja e multidão agitada. cena caótica, tensão. "
         "bagunçado, áspero, agressivo, estressante, poluído, urbano e hostil. "
         "sensação de conflito, ambiente carregado, cena pesada, perturbador visualmente."
     ),
@@ -90,7 +91,8 @@ if __name__ == "__main__":
     "fotografia com cara de antiga, velha, de outro tempo. película, polaroid, filme de 35mm. "
     "cores desbotadas, granulado, retrô, vintage, anos 70, anos 80, anos 90, anos 2000. "
     "saudade, memória, passado, afeto antigo, estética analógica, revelado à mão. "
-    "subcultura, emo, punk, gótico, alternativo, indie, rock, banda, show underground."  # <-- novo
+    "subcultura, emo, punk, gótico, alternativo, indie, rock, banda, show underground. "
+    "sensação de nostalgia, saudade, atmosfera de outro tempo, memória afetiva do passado."
 ),
     
     "Sublime (Paisagem)": (
@@ -164,5 +166,3 @@ export_knowledge_anchors_to_json(
         output_filepath=output_filepath,
         model_name="paraphrase-multilingual-MiniLM-L12-v2"
     )
-
-    
