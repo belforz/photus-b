@@ -26,6 +26,17 @@ O Photus B emprega técnicas de classificação semântica, incluindo:
 
 O principal objetivo do Photus B é identificar e linkar as fotos apuradas pelo Photus A, permitindo devolver ao usuário o conteúdo solicitado por meio de inferências em linguagem natural. Isso facilita a interação intuitiva com bancos de imagens processadas.
 
+## API
+
+`main.py` sobe um servidor HTTP (FastAPI) que recebe uma frase e devolve a categoria semântica correspondente, para ser consumido por outros serviços:
+
+```bash
+uv run main.py
+# POST http://localhost:8000/v1/categorize   {"text": "mostre a melhor foto melancolica"}
+```
+
+Detalhes de endpoints, variáveis de ambiente e arquitetura em [docs/API.md](docs/API.md).
+
 ## Tecnologias
 
 - **Python**: Linguagem principal para processamento de linguagem natural e integração com Magistrall.

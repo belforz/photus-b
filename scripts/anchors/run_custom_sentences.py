@@ -1,20 +1,16 @@
 #!/usr/bin/env python3
-"""Run custom queries against knowledge anchors and route technical inputs to Mistral."""
+"""Run custom queries against knowledge anchors and export routing categories."""
 import json
-import math
 import os
-import re
 import sys
-from typing import List, Optional
+from typing import Any, List, Optional
 
 import typer
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 sys.path.append(os.path.join(ROOT, "src"))
 
-from infrastructure.adapters import MistralConnector
-from infrastructure.adapters.sentence_transformer_adapter import SentenceTransformerAdapter
-from infrastructure.config.prompts.loader import load_prompt
+from domain.application.use_cases import CategorizationService
 from presentation.cli.terminal import CommandLineInterface
 from shared.utils import logger
 
@@ -35,72 +31,6 @@ SENTENCES = [
     "mostre uma cena simples e cotidiana",
 ]
 
-THRESHOLD_TECNICO = 0.48 
-
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
-
-def load_anchors(path: str) -> dict:
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
-
-
-def cosine(a: list, b: list) -> float:
-    dot = sum(x * y for x, y in zip(a, b))
-    na = math.sqrt(sum(x * x for x in a))
-    nb = math.sqrt(sum(y * y for y in b))
-    return dot / (na * nb) if na and nb else 0.0
-
-
-def rank_anchors(emb: list, anchors: dict) -> list[dict]:
-    """Return anchors deduplicated by anchor_id, sorted by best cosine score."""
-    best: dict[str, dict] = {}
-    for aid, phrase, aemb in zip(
-        anchors.get("anchors_ids", []),
-        anchors.get("phrases", []),
-        anchors.get("embeddings", []),
-    ):
-        score = float(cosine(emb, aemb))
-        if aid not in best or score > best[aid]["score"]:
-            best[aid] = {"anchor_id": aid, "anchor_phrase": phrase, "score": score}
-    return sorted(best.values(), key=lambda x: x["score"], reverse=True)
-
-REGEX_PARAMETRO_PURO = re.compile(
-    r"\b(f/\d[\d.]*|iso\s?\d{2,6}|\d+/\d+s?)\b",
-    re.IGNORECASE
-)
-
-def is_technical(text: str, ranked: list[dict]) -> tuple[bool, float]:
-    if REGEX_PARAMETRO_PURO.search(text):
-        return True, 1.0
-    score_tecnico = next(
-        (r["score"] for r in ranked if r["anchor_id"] == "__tecnico__"), 0.0
-    )
-    return score_tecnico >= THRESHOLD_TECNICO, score_tecnico
-
-
-def call_mistral_technical(connector: MistralConnector, text: str) -> Optional[str]:
-    """Send a technical input to Mistral using the technical system prompt."""
-    try:
-        system_prompt = load_prompt("base")
-        # system_promt_two = f"Me responda apenas como ENTENDIDO se o input é tecnico , sem precisar ser no formato JSON"
-        messages = [
-            {"role": "system", "content": system_prompt},
-            # {"role": "system", "content": system_promt_two},
-            {"role": "user", "content": text},
-        ]
-        response = connector.send_message(messages, max_tokens=512, temperature=0.1)
-        # magistral models return content as a list of chunks (ThinkChunk, TextChunk, etc.)
-        if isinstance(response, list):
-            response = "".join(
-                chunk.text for chunk in response if hasattr(chunk, "text")
-            )
-        return str(response) if response is not None else None
-    except Exception as e:
-        logger.error("Mistral request failed: %s", e)
-        return None
-
 # ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
@@ -114,52 +44,69 @@ def main(
     text: Optional[List[str]] = typer.Option(
         None, "--text", "-t", help="Text to process"
     ),
+    category_out: str = typer.Option(
+        os.path.join(ROOT, "data", "processed", "category_payload.json"),
+        "--category-out",
+        "-c",
+        help="Output JSON file for downstream category payload.",
+    ),
 ) -> None:
     anchors_path = os.path.join(ROOT, "data", "raw", "knowledge_anchors.json")
-    anchors = load_anchors(anchors_path)
-
-    adapter = SentenceTransformerAdapter()
-    mistral = MistralConnector()
+    service = CategorizationService(anchors_path=anchors_path)
 
     texts = cli.args_text(text)
-    embeddings = adapter.generate_embeddings(texts=texts)
+    if not texts:
+        prompt_text = typer.prompt("Digite uma frase para categorizar")
+        texts = [prompt_text]
 
     all_results = []
+    category_payloads = []
 
-    for sentence, emb in zip(texts, embeddings):
-        ranked = rank_anchors(emb, anchors)
-        top5 = ranked[:5]
-        technical, tech_score = is_technical(sentence,ranked)
+    for sentence in texts:
+        result = service.categorize(sentence, top_k=5)
 
         # --- display ---
         print("\n---")
         print("Texto:", sentence)
-        for r in top5:
-            print(f"  - {r['anchor_id']}: {r['score']:.4f}")
+        for m in result.top_matches:
+            print(f"  - {m.anchor_id}: {m.score:.4f}")
 
-        mistral_response = None
-        if technical:
-            print(f"\n[TÉCNICO detectado — score: {tech_score:.4f}] → roteando para Mistral...")
-            mistral_response = call_mistral_technical(mistral, sentence)
-            if mistral_response:
-                logger.info("Mistral response:\n{}", mistral_response)
-                print(mistral_response)
+        if result.technical:
+            print(f"\n[TÉCNICO detectado — score: {result.technical_score:.4f}] → roteando para Mistral...")
+            logger.info("Sending to Mistral: %s", sentence)
+            if result.mistral_response:
+                logger.info("Mistral response:\n%s", result.mistral_response)
+                print(f"Resposta Mistral:\n{result.mistral_response}")
             else:
-                print("[ERRO] Mistral não retornou resposta.")
+                print("[AVISO] Mistral não retornou resposta. Verifique logs para detalhes.")
+        else:
+            print(f"[Não-técnico] score: {result.technical_score:.4f} (limiar: {result.threshold})")
 
         all_results.append({
             "text": sentence,
-            "top": top5,
-            "technical": technical,
-            "technical_score": tech_score,
-            "mistral_response": mistral_response,
+            "top": [m.to_dict() for m in result.top_matches],
+            "technical": result.technical,
+            "technical_score": result.technical_score,
+            "mistral_response": result.mistral_response,
         })
+
+        category_payloads.append(result.to_category_payload())
 
     out_path = os.path.join(ROOT, "data", "processed", "custom_sentences_results.json")
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump({"results": all_results}, f, ensure_ascii=False, indent=2)
 
+    category_export: dict[str, Any]
+    if len(category_payloads) == 1:
+        category_export = category_payloads[0]
+    else:
+        category_export = {"items": category_payloads}
+
+    with open(category_out, "w", encoding="utf-8") as f:
+        json.dump(category_export, f, ensure_ascii=False, indent=2)
+
     print("\nResults saved to", out_path)
+    print("Category payload saved to", category_out)
 
 
 if __name__ == "__main__":
