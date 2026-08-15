@@ -21,5 +21,7 @@ class CategorizeResponse(BaseModel):
     technical: bool
     technical_score: float
     threshold: float
+    low_confidence: bool
+    confidence_threshold: float
     top_matches: List[MatchSchema]
     mistral_response: Optional[str] = None

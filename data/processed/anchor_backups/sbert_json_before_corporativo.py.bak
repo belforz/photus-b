@@ -104,13 +104,7 @@ if __name__ == "__main__":
     "Corporativo (Focado)": (
         "foto profissional para currículo, linkedin ou apresentação de trabalho. "
         "sério, confiável, formal, neutro, limpo, estúdio, fundo liso. "
-        "imagem de executivo, chefe, funcionário, empresário, headshot, foto de perfil profissional. "
-
-        # contra o vazamento pra Conexão (Close-up): aperta contra emoção/intimidade
-        "pose formal e distante para estúdio, expressão neutra e contida, sem intimidade ou emoção pessoal no olhar. "
-
-        # contra o vazamento pra Noturno (Festa): abre pra evento social formal, ancorado em sério/comedido
-        "evento corporativo formal, coquetel ou confraternização de trabalho, comportamento sério e comedido, sem euforia nem dança."
+        "imagem de executivo, chefe, funcionário, empresário, headshot, foto de perfil profissional."
     ),
 
     "Noturno (Festa)": (

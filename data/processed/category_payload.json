@@ -1,9 +1,11 @@
 {
-  "input_text": "mostre a melhor foto melancolica",
-  "category": "Conexão",
-  "category_code": "conexao",
-  "confidence": 0.5831145644187927,
+  "input_text": "oi",
+  "category": "Sublime",
+  "category_code": "sublime",
+  "confidence": 0.43984875082969666,
   "technical": false,
-  "technical_score": 0.2785519063472748,
-  "threshold": 0.48
+  "technical_score": 0.22315731644630432,
+  "threshold": 0.48,
+  "low_confidence": true,
+  "confidence_threshold": 0.45
 }

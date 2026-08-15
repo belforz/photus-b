@@ -17,6 +17,10 @@ from infrastructure.config.prompts.loader import load_prompt
 from shared.utils import logger
 
 THRESHOLD_TECNICO = 0.48
+"""Score mínimo contra a âncora `__tecnico__` para considerar o input um pedido técnico."""
+
+CONFIDENCE_THRESHOLD_LOW = 0.45
+"""Abaixo disso, a categoria vencedora é considerada pouco confiável (`low_confidence=True`)."""
 
 _REGEX_PARAMETRO_PURO = re.compile(
     r"\b(f/\d[\d.]*|iso\s?\d{2,6}|\d+/\d+s?)\b",
@@ -68,6 +72,8 @@ class CategoryResult:
     technical: bool
     technical_score: float
     threshold: float
+    low_confidence: bool = False
+    confidence_threshold: float = CONFIDENCE_THRESHOLD_LOW
     top_matches: List[CategoryMatch] = field(default_factory=list)
     mistral_response: Optional[str] = None
 
@@ -81,6 +87,8 @@ class CategoryResult:
             "technical": self.technical,
             "technical_score": self.technical_score,
             "threshold": self.threshold,
+            "low_confidence": self.low_confidence,
+            "confidence_threshold": self.confidence_threshold,
         }
 
     def to_dict(self) -> dict[str, Any]:
@@ -139,22 +147,44 @@ class CategorizationService:
             score = float(_cosine(embedding, aemb))
             if aid not in best or score > best[aid].score:
                 best[aid] = CategoryMatch(anchor_id=aid, anchor_phrase=phrase, score=score)
-        return sorted(best.values(), key=lambda m: m.score, reverse=True)
+        ranked = sorted(best.values(), key=lambda m: m.score, reverse=True)
+        logger.info(
+            "[step 2/4] ranked {} unique anchors; top-5: {}",
+            len(ranked),
+            ", ".join(f"{m.anchor_id}={m.score:.3f}" for m in ranked[:5]),
+        )
+        return ranked
 
     def _is_technical(self, text: str, ranked: List[CategoryMatch]) -> tuple[bool, float]:
-        if _REGEX_PARAMETRO_PURO.search(text):
+        regex_match = _REGEX_PARAMETRO_PURO.search(text)
+        if regex_match:
+            logger.info(
+                "[step 3/4] technical=True via regex match {!r} (bypasses threshold={})",
+                regex_match.group(0),
+                THRESHOLD_TECNICO,
+            )
             return True, 1.0
+
         score_tecnico = next(
             (m.score for m in ranked if m.anchor_id == "__tecnico__"), 0.0
         )
-        return score_tecnico >= THRESHOLD_TECNICO, score_tecnico
+        technical = score_tecnico >= THRESHOLD_TECNICO
+        logger.info(
+            "[step 3/4] technical check: __tecnico__ score={:.3f} vs threshold={} -> technical={}",
+            score_tecnico,
+            THRESHOLD_TECNICO,
+            technical,
+        )
+        return technical, score_tecnico
 
     def call_mistral_technical(self, text: str) -> Optional[str]:
         """Send a technical input to Mistral using the technical system prompt."""
         connector = self._mistral_connector()
         if connector is None:
+            logger.warning("[step 4/4] Mistral fallback unavailable; skipping.")
             return None
         try:
+            logger.info("[step 4/4] routing technical input to Mistral...")
             system_prompt = load_prompt("base")
             messages = [
                 {"role": "system", "content": system_prompt},
@@ -166,11 +196,12 @@ class CategorizationService:
                     chunk.text for chunk in response if hasattr(chunk, "text")
                 )
             if response is None:
-                logger.warning("Mistral returned None response for text: %s", text)
+                logger.warning(f"[step 4/4] Mistral returned None response for text: {text!r}")
                 return None
+            logger.info(f"[step 4/4] Mistral responded ({len(str(response))} chars)")
             return str(response)
         except Exception as e:
-            logger.error("Mistral request failed: %s", e, exc_info=True)
+            logger.error(f"[step 4/4] Mistral request failed: {e}", exc_info=True)
             return None
 
     def categorize(
@@ -179,7 +210,11 @@ class CategorizationService:
         if not text or not text.strip():
             raise ValueError("text must not be empty")
 
+        logger.info(f"[step 1/4] categorizing text={text!r} (len={len(text)})")
+
         embedding = self._embedder.generate_embeddings(texts=text)
+        logger.debug(f"[step 1/4] embedding generated (dim={len(embedding)})")
+
         ranked = self.rank_anchors(embedding)
         technical, tech_score = self._is_technical(text, ranked)
 
@@ -188,6 +223,22 @@ class CategorizationService:
             mistral_response = self.call_mistral_technical(text)
 
         best = ranked[0] if ranked else CategoryMatch("unknown", "", 0.0)
+        low_confidence = best.score < CONFIDENCE_THRESHOLD_LOW
+        if low_confidence:
+            logger.warning(
+                "[step 4/4] low confidence: best match {} score={:.3f} < threshold={}",
+                best.anchor_id,
+                best.score,
+                CONFIDENCE_THRESHOLD_LOW,
+            )
+        else:
+            logger.info(
+                "[step 4/4] result: category={} confidence={:.3f} (>= threshold={})",
+                _base_label(best.anchor_id),
+                best.score,
+                CONFIDENCE_THRESHOLD_LOW,
+            )
+
         return CategoryResult(
             input_text=text,
             category=_base_label(best.anchor_id),
@@ -196,6 +247,8 @@ class CategorizationService:
             technical=technical,
             technical_score=float(tech_score),
             threshold=THRESHOLD_TECNICO,
+            low_confidence=low_confidence,
+            confidence_threshold=CONFIDENCE_THRESHOLD_LOW,
             top_matches=ranked[:top_k],
             mistral_response=mistral_response,
         )
