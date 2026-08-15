@@ -1,0 +1,489 @@
+{
+  "threshold_tecnico": 0.48,
+  "confidence_threshold_low": 0.45,
+  "distanciamento_group_a": [
+    {
+      "text": "poste de luz solitário contra escuridão quase total",
+      "expected": "Distanciamento (Low-key)",
+      "before": {
+        "top1_anchor": "Vitalidade (Ação)",
+        "top1_score": 0.7254831790924072,
+        "technical": true,
+        "technical_score": 0.5137847065925598,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.8344681859016418,
+        "technical": true,
+        "technical_score": 0.5137847065925598,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "corredor vazio e escuro",
+      "expected": "Distanciamento (Low-key)",
+      "before": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.613574206829071,
+        "technical": false,
+        "technical_score": 0.3918003439903259,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.6401579976081848,
+        "technical": false,
+        "technical_score": 0.3918003439903259,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "silhueta isolada, ninguém por perto",
+      "expected": "Distanciamento (Low-key)",
+      "before": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.6577491760253906,
+        "technical": false,
+        "technical_score": 0.34841388463974,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.6429996490478516,
+        "technical": false,
+        "technical_score": 0.34841388463974,
+        "low_confidence": false
+      }
+    }
+  ],
+  "distanciamento_group_b": [
+    {
+      "text": "paisagem grandiosa mas fotografada no escuro",
+      "expected": "Distanciamento (Low-key)",
+      "before": {
+        "top1_anchor": "Sublime (Paisagem)",
+        "top1_score": 0.8420382738113403,
+        "technical": false,
+        "technical_score": 0.32259857654571533,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.9025905728340149,
+        "technical": false,
+        "technical_score": 0.32259857654571533,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "pessoa sozinha ao entardecer, sombras longas",
+      "expected": null,
+      "before": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.7020344138145447,
+        "technical": false,
+        "technical_score": 0.36255061626434326,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.7254888415336609,
+        "technical": false,
+        "technical_score": 0.36255061626434326,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "montanha grandiosa fotografada à noite",
+      "expected": "Sublime (Paisagem)",
+      "before": {
+        "top1_anchor": "Sublime (Paisagem)",
+        "top1_score": 0.7554765343666077,
+        "technical": false,
+        "technical_score": 0.26941049098968506,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Sublime (Paisagem)",
+        "top1_score": 0.7554765343666077,
+        "technical": false,
+        "technical_score": 0.26941049098968506,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "ambiente escuro mas festivo e animado",
+      "expected": "Noturno (Festa)",
+      "before": {
+        "top1_anchor": "Noturno (Festa)",
+        "top1_score": 0.7050879001617432,
+        "technical": false,
+        "technical_score": 0.30288195610046387,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Noturno (Festa)",
+        "top1_score": 0.7050879001617432,
+        "technical": false,
+        "technical_score": 0.30288195610046387,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "show de rock em ambiente escuro",
+      "expected": "Noturno (Festa)",
+      "before": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.6000268459320068,
+        "technical": false,
+        "technical_score": 0.3181617856025696,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.6568578481674194,
+        "technical": false,
+        "technical_score": 0.3181617856025696,
+        "low_confidence": false
+      }
+    }
+  ],
+  "guard_cases": [
+    {
+      "text": "atleta no ápice do salto sob sol forte",
+      "expected": "Vitalidade (Ação)",
+      "before": {
+        "top1_anchor": "Vitalidade (Ação)",
+        "top1_score": 0.6386901140213013,
+        "technical": false,
+        "technical_score": 0.3197500705718994,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Vitalidade (Ação)",
+        "top1_score": 0.6386901140213013,
+        "technical": false,
+        "technical_score": 0.3197500705718994,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "corrida com respingos de água",
+      "expected": "Vitalidade (Ação)",
+      "before": {
+        "top1_anchor": "Vitalidade (Ação)",
+        "top1_score": 0.5097430944442749,
+        "technical": false,
+        "technical_score": 0.3402186632156372,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Vitalidade (Ação)",
+        "top1_score": 0.5097430944442749,
+        "technical": false,
+        "technical_score": 0.3402186632156372,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "energia explosiva ao meio-dia",
+      "expected": "Vitalidade (Ação)",
+      "before": {
+        "top1_anchor": "Vitalidade (Ação)",
+        "top1_score": 0.5763977766036987,
+        "technical": false,
+        "technical_score": 0.3563791811466217,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Vitalidade (Ação)",
+        "top1_score": 0.5763977766036987,
+        "technical": false,
+        "technical_score": 0.3563791811466217,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "pessoa minúscula de costas contra paisagem grandiosa",
+      "expected": "Sublime (Paisagem)",
+      "before": {
+        "top1_anchor": "Sublime (Paisagem)",
+        "top1_score": 0.7741302251815796,
+        "technical": false,
+        "technical_score": 0.35166147351264954,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Sublime (Paisagem)",
+        "top1_score": 0.7741302251815796,
+        "technical": false,
+        "technical_score": 0.35166147351264954,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "oceano sem fim, céu épico",
+      "expected": "Sublime (Paisagem)",
+      "before": {
+        "top1_anchor": "Sublime (Paisagem)",
+        "top1_score": 0.6390640735626221,
+        "technical": false,
+        "technical_score": 0.31798994541168213,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Sublime (Paisagem)",
+        "top1_score": 0.6390640735626221,
+        "technical": false,
+        "technical_score": 0.31798994541168213,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "montanha ao pôr do sol dramático",
+      "expected": "Sublime (Paisagem)",
+      "before": {
+        "top1_anchor": "Sublime (Paisagem)",
+        "top1_score": 0.6902728080749512,
+        "technical": false,
+        "technical_score": 0.3390830159187317,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Sublime (Paisagem)",
+        "top1_score": 0.6902728080749512,
+        "technical": false,
+        "technical_score": 0.3390830159187317,
+        "low_confidence": false
+      }
+    }
+  ],
+  "prior_rounds_targets": [
+    {
+      "text": "retrato de estúdio emotivo, com olhar vivo",
+      "expected": "Conexão (Close-up)",
+      "before": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.7148662209510803,
+        "technical": false,
+        "technical_score": 0.28760287165641785,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.7148662209510803,
+        "technical": false,
+        "technical_score": 0.28760287165641785,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "cena social mas estática e formal, tipo coquetel corporativo",
+      "expected": "Corporativo (Focado)",
+      "before": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.6551682353019714,
+        "technical": false,
+        "technical_score": 0.3608876168727875,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.6551682353019714,
+        "technical": false,
+        "technical_score": 0.3608876168727875,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "sessão de fotos de estúdio com o executivo sorrindo abertamente para a câmera, clima descontraído",
+      "expected": "Conexão (Close-up)",
+      "before": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.865432620048523,
+        "technical": false,
+        "technical_score": 0.2952705919742584,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.865432620048523,
+        "technical": false,
+        "technical_score": 0.2952705919742584,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "cena doméstica mas visivelmente produzida e estilizada",
+      "expected": "Solenidade (Estase)",
+      "before": {
+        "top1_anchor": "Solenidade (Estase)",
+        "top1_score": 0.6999639868736267,
+        "technical": true,
+        "technical_score": 0.5073951482772827,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Solenidade (Estase)",
+        "top1_score": 0.6999639868736267,
+        "technical": true,
+        "technical_score": 0.5073951482772827,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "cozinha iluminada por luz de janela, sem produção",
+      "expected": "Simplicidade (Cotidiano)",
+      "before": {
+        "top1_anchor": "Simplicidade (Cotidiano)",
+        "top1_score": 0.6324206590652466,
+        "technical": false,
+        "technical_score": 0.43140149116516113,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Simplicidade (Cotidiano)",
+        "top1_score": 0.6324206590652466,
+        "technical": false,
+        "technical_score": 0.43140149116516113,
+        "low_confidence": false
+      }
+    }
+  ],
+  "group_a_full_regressions": [
+    {
+      "text": "olhos fechados, luz de contorno, mão tocando o queixo",
+      "expected": "Conexão (Close-up)",
+      "before": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.5206825733184814,
+        "technical": false,
+        "technical_score": 0.36888670921325684,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.5102295875549316,
+        "technical": false,
+        "technical_score": 0.36888670921325684,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "poste de luz solitário contra escuridão quase total",
+      "expected": "Distanciamento (Low-key)",
+      "before": {
+        "top1_anchor": "Vitalidade (Ação)",
+        "top1_score": 0.7254831790924072,
+        "technical": true,
+        "technical_score": 0.5137847065925598,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.8344681859016418,
+        "technical": true,
+        "technical_score": 0.5137847065925598,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "corredor vazio e escuro",
+      "expected": "Distanciamento (Low-key)",
+      "before": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.613574206829071,
+        "technical": false,
+        "technical_score": 0.3918003439903259,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.6401579976081848,
+        "technical": false,
+        "technical_score": 0.3918003439903259,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "silhueta isolada, ninguém por perto",
+      "expected": "Distanciamento (Low-key)",
+      "before": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.6577491760253906,
+        "technical": false,
+        "technical_score": 0.34841388463974,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.6429996490478516,
+        "technical": false,
+        "technical_score": 0.34841388463974,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "pessoa lendo sem posar",
+      "expected": "Simplicidade (Cotidiano)",
+      "before": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.39410558342933655,
+        "technical": false,
+        "technical_score": 0.20130164921283722,
+        "low_confidence": true
+      },
+      "after": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.3911147117614746,
+        "technical": false,
+        "technical_score": 0.20130164921283722,
+        "low_confidence": true
+      }
+    },
+    {
+      "text": "grão de filme genuíno em retrato quase preto e branco",
+      "expected": "Nostalgia (Analógico)",
+      "before": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.6510896682739258,
+        "technical": false,
+        "technical_score": 0.44171297550201416,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Solenidade (Estase)",
+        "top1_score": 0.6215413212776184,
+        "technical": false,
+        "technical_score": 0.44171297550201416,
+        "low_confidence": false
+      }
+    }
+  ],
+  "group_a_full_identical_count": 24,
+  "group_a_full_total": 30,
+  "tecnico_cross_check_regressions": [
+    {
+      "text": "deixa o assunto nítido e o fundo totalmente desfocado",
+      "before": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.4184678792953491,
+        "technical": false,
+        "technical_score": 0.3901139497756958,
+        "low_confidence": true
+      },
+      "after": {
+        "top1_anchor": "__tecnico__",
+        "top1_score": 0.3901139497756958,
+        "technical": false,
+        "technical_score": 0.3901139497756958,
+        "low_confidence": true
+      }
+    }
+  ],
+  "tecnico_cross_check_identical_count": 8,
+  "score_before": 0.6656021873156229,
+  "score_after": 0.7058752775192261,
+  "criterio_atingido": false
+}

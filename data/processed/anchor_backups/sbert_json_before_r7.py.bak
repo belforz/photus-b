@@ -76,13 +76,9 @@ if __name__ == "__main__":
     ),
 
     "Distanciamento (Low-key)": (
-        "cena dominada pela escuridão, ambiente sombrio e pesado, iluminação baixa e dura de propósito. "
-        "lugar vazio e abandonado, estrutura de concreto desolada, sem nenhum sinal de vida ao redor. "
-        "sensação de isolamento profundo e silêncio pesado, uma tristeza fria, melancólica e distante. "
-        "sensação de solidão total, ninguém por perto, muitas vezes apenas um ponto de luz pequeno e intenso — poste, janela ou lâmpada isolada — destacado contra uma escuridão vasta e dominante. "
-
-        # contra o vazamento pra Sublime com "paisagem grandiosa mas fotografada no escuro" (r7, afirmativa)
-        "paisagem ou cenário grandioso fotografado completamente às escuras, a escala impressionante do lugar apagada pela falta de luz."
+        "foto escura, sombria e pesada. lugar vazio, abandonado, desolado, concreto. "
+        "solitário, isolado, triste, frio, melancólico, silencioso, distante. "
+        "sensação de solidão, ninguém por perto, ambiente opressivo, luz baixa e dura."
     ),
 
     "Simplicidade (Cotidiano)": (
