@@ -1,0 +1,273 @@
+{
+  "threshold_tecnico": 0.48,
+  "confidence_threshold_low": 0.45,
+  "simplicidade_group_a": [
+    {
+      "text": "cozinha iluminada por luz de janela, sem produção",
+      "expected": "Simplicidade (Cotidiano)",
+      "before": {
+        "top1_anchor": "Simplicidade (Cotidiano)",
+        "top1_score": 0.4322398006916046,
+        "technical": false,
+        "technical_score": 0.43140149116516113,
+        "low_confidence": true
+      },
+      "after": {
+        "top1_anchor": "Simplicidade (Cotidiano)",
+        "top1_score": 0.6324206590652466,
+        "technical": false,
+        "technical_score": 0.43140149116516113,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "pessoa lendo sem posar",
+      "expected": "Simplicidade (Cotidiano)",
+      "before": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.39410558342933655,
+        "technical": false,
+        "technical_score": 0.20130164921283722,
+        "low_confidence": true
+      },
+      "after": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.39410558342933655,
+        "technical": false,
+        "technical_score": 0.20130164921283722,
+        "low_confidence": true
+      }
+    },
+    {
+      "text": "cena doméstica comum sem drama",
+      "expected": "Simplicidade (Cotidiano)",
+      "before": {
+        "top1_anchor": "Simplicidade (Cotidiano)",
+        "top1_score": 0.5767984986305237,
+        "technical": false,
+        "technical_score": 0.30797716975212097,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Simplicidade (Cotidiano)",
+        "top1_score": 0.6132082343101501,
+        "technical": false,
+        "technical_score": 0.30797716975212097,
+        "low_confidence": false
+      }
+    }
+  ],
+  "fronteira_cases": [
+    {
+      "text": "pessoa em roupa profissional mas em ambiente real, não estúdio",
+      "expected": "Simplicidade (Cotidiano)",
+      "before": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.6664217710494995,
+        "technical": false,
+        "technical_score": 0.2764056324958801,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.6664217710494995,
+        "technical": false,
+        "technical_score": 0.2764056324958801,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "roupa profissional mas em ambiente real, não estúdio",
+      "expected": "Simplicidade (Cotidiano)",
+      "before": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.6172635555267334,
+        "technical": false,
+        "technical_score": 0.3173477053642273,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.6172635555267334,
+        "technical": false,
+        "technical_score": 0.3173477053642273,
+        "low_confidence": false
+      }
+    }
+  ],
+  "prior_rounds_targets": [
+    {
+      "text": "retrato de estúdio emotivo, com olhar vivo",
+      "expected": "Conexão (Close-up)",
+      "before": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.7148662209510803,
+        "technical": false,
+        "technical_score": 0.28760287165641785,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.7148662209510803,
+        "technical": false,
+        "technical_score": 0.28760287165641785,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "cena social mas estática e formal, tipo coquetel corporativo",
+      "expected": "Corporativo (Focado)",
+      "before": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.6551682353019714,
+        "technical": false,
+        "technical_score": 0.3608876168727875,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.6551682353019714,
+        "technical": false,
+        "technical_score": 0.3608876168727875,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "sessão de fotos de estúdio com o executivo sorrindo abertamente para a câmera, clima descontraído",
+      "expected": "Conexão (Close-up)",
+      "before": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.865432620048523,
+        "technical": false,
+        "technical_score": 0.2952705919742584,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.865432620048523,
+        "technical": false,
+        "technical_score": 0.2952705919742584,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "cena doméstica mas visivelmente produzida e estilizada",
+      "expected": "Solenidade (Estase)",
+      "before": {
+        "top1_anchor": "Solenidade (Estase)",
+        "top1_score": 0.6999639868736267,
+        "technical": true,
+        "technical_score": 0.5073951482772827,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Solenidade (Estase)",
+        "top1_score": 0.6999639868736267,
+        "technical": true,
+        "technical_score": 0.5073951482772827,
+        "low_confidence": false
+      }
+    }
+  ],
+  "group_a_corporativo": [
+    {
+      "text": "headshot com fundo neutro de estúdio",
+      "expected": "Corporativo (Focado)",
+      "before": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5473476052284241,
+        "technical": true,
+        "technical_score": 0.4946528673171997,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5473476052284241,
+        "technical": true,
+        "technical_score": 0.4946528673171997,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "iluminação de estúdio limpa, roupa formal",
+      "expected": "Corporativo (Focado)",
+      "before": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5522037148475647,
+        "technical": false,
+        "technical_score": 0.46239355206489563,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5522037148475647,
+        "technical": false,
+        "technical_score": 0.46239355206489563,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "foto que colocaria no LinkedIn sem hesitar",
+      "expected": "Corporativo (Focado)",
+      "before": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5584883093833923,
+        "technical": false,
+        "technical_score": 0.2723426818847656,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5584883093833923,
+        "technical": false,
+        "technical_score": 0.2723426818847656,
+        "low_confidence": false
+      }
+    }
+  ],
+  "group_a_full_regressions": [
+    {
+      "text": "cozinha iluminada por luz de janela, sem produção",
+      "expected": "Simplicidade (Cotidiano)",
+      "before": {
+        "top1_anchor": "Simplicidade (Cotidiano)",
+        "top1_score": 0.4322398006916046,
+        "technical": false,
+        "technical_score": 0.43140149116516113,
+        "low_confidence": true
+      },
+      "after": {
+        "top1_anchor": "Simplicidade (Cotidiano)",
+        "top1_score": 0.6324206590652466,
+        "technical": false,
+        "technical_score": 0.43140149116516113,
+        "low_confidence": false
+      }
+    },
+    {
+      "text": "cena doméstica comum sem drama",
+      "expected": "Simplicidade (Cotidiano)",
+      "before": {
+        "top1_anchor": "Simplicidade (Cotidiano)",
+        "top1_score": 0.5767984986305237,
+        "technical": false,
+        "technical_score": 0.30797716975212097,
+        "low_confidence": false
+      },
+      "after": {
+        "top1_anchor": "Simplicidade (Cotidiano)",
+        "top1_score": 0.6132082343101501,
+        "technical": false,
+        "technical_score": 0.30797716975212097,
+        "low_confidence": false
+      }
+    }
+  ],
+  "group_a_full_identical_count": 28,
+  "group_a_full_total": 30,
+  "tecnico_cross_check_regressions": [],
+  "tecnico_cross_check_identical_count": 9,
+  "score_before": 0.4677146275838216,
+  "score_after": 0.5465781589349111,
+  "criterio_atingido": false
+}

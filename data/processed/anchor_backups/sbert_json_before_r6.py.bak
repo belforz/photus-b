@@ -82,9 +82,8 @@ if __name__ == "__main__":
     ),
 
     "Simplicidade (Cotidiano)": (
-        "foto comum do dia a dia, sem produção. "
-        "cena de casa, cozinha ou rua no meio da rotina do dia a dia, sem nenhuma preparação especial para a foto. "
-        "pessoa agindo de forma natural e casual, sem pose para a câmera, autêntica no ambiente familiar do cotidiano. "
+        "foto comum do dia a dia, sem produção. casa, cozinha, rua, trabalho, rotina. "
+        "natural, simples, casual, autêntico, doméstico, familiar, sem pose. "
         "luz de janela, cena ordinária, momento espontâneo, vida real sem filtro."
     ),
 
