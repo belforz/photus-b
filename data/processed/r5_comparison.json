@@ -1,0 +1,338 @@
+{
+  "threshold_tecnico": 0.48,
+  "confidence_threshold_low": 0.45,
+  "target_cases": [
+    {
+      "text": "cena doméstica mas visivelmente produzida e estilizada",
+      "expected": "Solenidade (Estase)",
+      "before": {
+        "top1_anchor": "Simplicidade (Cotidiano)",
+        "top1_score": 0.6203590035438538,
+        "technical": true,
+        "technical_score": 0.5073951482772827
+      },
+      "after": {
+        "top1_anchor": "Solenidade (Estase)",
+        "top1_score": 0.6999639868736267,
+        "technical": true,
+        "technical_score": 0.5073951482772827
+      }
+    },
+    {
+      "text": "rosto pequeno e disperso em meio a uma multidão",
+      "expected": "Conflito (Caos)",
+      "before": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.5959256887435913,
+        "technical": false,
+        "technical_score": 0.19233238697052002
+      },
+      "after": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.5959256887435913,
+        "technical": false,
+        "technical_score": 0.19233238697052002
+      }
+    },
+    {
+      "text": "sobrecarga sensorial, nada no lugar",
+      "expected": "Conflito (Caos)",
+      "before": {
+        "top1_anchor": "Solenidade (Estase)",
+        "top1_score": 0.5572724938392639,
+        "technical": false,
+        "technical_score": 0.3623409569263458
+      },
+      "after": {
+        "top1_anchor": "Solenidade (Estase)",
+        "top1_score": 0.5572724938392639,
+        "technical": false,
+        "technical_score": 0.3623409569263458
+      }
+    }
+  ],
+  "guard_cases": [
+    {
+      "text": "cozinha iluminada por luz de janela, sem produção",
+      "expected": "Simplicidade (Cotidiano)",
+      "before": {
+        "top1_anchor": "Simplicidade (Cotidiano)",
+        "top1_score": 0.4322398006916046,
+        "technical": false,
+        "technical_score": 0.43140149116516113
+      },
+      "after": {
+        "top1_anchor": "Simplicidade (Cotidiano)",
+        "top1_score": 0.4322398006916046,
+        "technical": false,
+        "technical_score": 0.43140149116516113
+      }
+    },
+    {
+      "text": "pessoa lendo sem posar",
+      "expected": "Simplicidade (Cotidiano)",
+      "before": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.39410558342933655,
+        "technical": false,
+        "technical_score": 0.20130164921283722
+      },
+      "after": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.39410558342933655,
+        "technical": false,
+        "technical_score": 0.20130164921283722
+      }
+    },
+    {
+      "text": "cena doméstica comum sem drama",
+      "expected": "Simplicidade (Cotidiano)",
+      "before": {
+        "top1_anchor": "Simplicidade (Cotidiano)",
+        "top1_score": 0.5767984986305237,
+        "technical": false,
+        "technical_score": 0.30797716975212097
+      },
+      "after": {
+        "top1_anchor": "Simplicidade (Cotidiano)",
+        "top1_score": 0.5767984986305237,
+        "technical": false,
+        "technical_score": 0.30797716975212097
+      }
+    },
+    {
+      "text": "produto isolado em fundo branco",
+      "expected": "Solenidade (Estase)",
+      "before": {
+        "top1_anchor": "__tecnico__",
+        "top1_score": 0.5107608437538147,
+        "technical": true,
+        "technical_score": 0.5107608437538147
+      },
+      "after": {
+        "top1_anchor": "__tecnico__",
+        "top1_score": 0.5107608437538147,
+        "technical": true,
+        "technical_score": 0.5107608437538147
+      }
+    },
+    {
+      "text": "ambiente minimalista vazio e simétrico",
+      "expected": "Solenidade (Estase)",
+      "before": {
+        "top1_anchor": "Solenidade (Estase)",
+        "top1_score": 0.662910521030426,
+        "technical": false,
+        "technical_score": 0.42928633093833923
+      },
+      "after": {
+        "top1_anchor": "Solenidade (Estase)",
+        "top1_score": 0.662910521030426,
+        "technical": false,
+        "technical_score": 0.42928633093833923
+      }
+    },
+    {
+      "text": "silêncio visual, nada em movimento",
+      "expected": "Solenidade (Estase)",
+      "before": {
+        "top1_anchor": "Solenidade (Estase)",
+        "top1_score": 0.6810309290885925,
+        "technical": false,
+        "technical_score": 0.371712327003479
+      },
+      "after": {
+        "top1_anchor": "Solenidade (Estase)",
+        "top1_score": 0.6810309290885925,
+        "technical": false,
+        "technical_score": 0.371712327003479
+      }
+    },
+    {
+      "text": "olhos fechados, luz de contorno, mão tocando o queixo",
+      "expected": "Conexão (Close-up)",
+      "before": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.5206825733184814,
+        "technical": false,
+        "technical_score": 0.36888670921325684
+      },
+      "after": {
+        "top1_anchor": "Distanciamento (Low-key)",
+        "top1_score": 0.5206825733184814,
+        "technical": false,
+        "technical_score": 0.36888670921325684
+      }
+    },
+    {
+      "text": "rosto ocupando o quadro, olhar direto",
+      "expected": "Conexão (Close-up)",
+      "before": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.7279984354972839,
+        "technical": false,
+        "technical_score": 0.39201369881629944
+      },
+      "after": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.7279984354972839,
+        "technical": false,
+        "technical_score": 0.39201369881629944
+      }
+    },
+    {
+      "text": "abraço com rostos próximos em foco",
+      "expected": "Conexão (Close-up)",
+      "before": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.7483593821525574,
+        "technical": false,
+        "technical_score": 0.14950518310070038
+      },
+      "after": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.7483593821525574,
+        "technical": false,
+        "technical_score": 0.14950518310070038
+      }
+    },
+    {
+      "text": "multidão densa vista de cima",
+      "expected": "Conflito (Caos)",
+      "before": {
+        "top1_anchor": "Conflito (Caos)",
+        "top1_score": 0.5661921501159668,
+        "technical": false,
+        "technical_score": 0.23152382671833038
+      },
+      "after": {
+        "top1_anchor": "Conflito (Caos)",
+        "top1_score": 0.5661921501159668,
+        "technical": false,
+        "technical_score": 0.23152382671833038
+      }
+    },
+    {
+      "text": "rua com grafite e detritos, tensão visual",
+      "expected": "Conflito (Caos)",
+      "before": {
+        "top1_anchor": "Conflito (Caos)",
+        "top1_score": 0.7214123010635376,
+        "technical": false,
+        "technical_score": 0.2659151554107666
+      },
+      "after": {
+        "top1_anchor": "Conflito (Caos)",
+        "top1_score": 0.7214122414588928,
+        "technical": false,
+        "technical_score": 0.2659151554107666
+      }
+    }
+  ],
+  "prior_rounds_cross_check": [
+    {
+      "text": "retrato de estúdio emotivo, com olhar vivo",
+      "expected": "Conexão (Close-up)",
+      "before": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.7148662209510803,
+        "technical": false,
+        "technical_score": 0.28760287165641785
+      },
+      "after": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.7148662209510803,
+        "technical": false,
+        "technical_score": 0.28760287165641785
+      }
+    },
+    {
+      "text": "cena social mas estática e formal, tipo coquetel corporativo",
+      "expected": "Corporativo (Focado)",
+      "before": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.6551682353019714,
+        "technical": false,
+        "technical_score": 0.3608876168727875
+      },
+      "after": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.6551682353019714,
+        "technical": false,
+        "technical_score": 0.3608876168727875
+      }
+    },
+    {
+      "text": "sessão de fotos de estúdio com o executivo sorrindo abertamente para a câmera, clima descontraído",
+      "expected": "Conexão (Close-up)",
+      "before": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.865432620048523,
+        "technical": false,
+        "technical_score": 0.2952705919742584
+      },
+      "after": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.865432620048523,
+        "technical": false,
+        "technical_score": 0.2952705919742584
+      }
+    }
+  ],
+  "group_a_corporativo": [
+    {
+      "text": "headshot com fundo neutro de estúdio",
+      "expected": "Corporativo (Focado)",
+      "before": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5473476052284241,
+        "technical": true,
+        "technical_score": 0.4946528673171997
+      },
+      "after": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5473476052284241,
+        "technical": true,
+        "technical_score": 0.4946528673171997
+      }
+    },
+    {
+      "text": "iluminação de estúdio limpa, roupa formal",
+      "expected": "Corporativo (Focado)",
+      "before": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5522037148475647,
+        "technical": false,
+        "technical_score": 0.46239355206489563
+      },
+      "after": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5522037148475647,
+        "technical": false,
+        "technical_score": 0.46239355206489563
+      }
+    },
+    {
+      "text": "foto que colocaria no LinkedIn sem hesitar",
+      "expected": "Corporativo (Focado)",
+      "before": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5584883093833923,
+        "technical": false,
+        "technical_score": 0.2723426818847656
+      },
+      "after": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5584883093833923,
+        "technical": false,
+        "technical_score": 0.2723426818847656
+      }
+    }
+  ],
+  "group_a_full_regressions": [],
+  "group_a_full_identical_count": 30,
+  "group_a_full_total": 30,
+  "tecnico_cross_check_regressions": [],
+  "tecnico_cross_check_identical_count": 9,
+  "criterio_atingido": false
+}
