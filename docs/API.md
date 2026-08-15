@@ -57,6 +57,8 @@ Categoriza uma frase.
   "technical": false,
   "technical_score": 0.2785519063472748,
   "threshold": 0.48,
+  "low_confidence": false,
+  "confidence_threshold": 0.45,
   "top_matches": [
     { "anchor_id": "Conexão (Close-up)", "anchor_phrase": "foto de rosto humano em plano fechado...", "score": 0.5831145644187927 }
   ],
@@ -72,8 +74,32 @@ Categoriza uma frase.
 | `technical` | `true` se o texto foi classificado como pedido técnico (parâmetros de câmera/fotografia) |
 | `technical_score` | Score de similaridade com a âncora `__tecnico__`, ou `1.0` se um parâmetro técnico explícito foi detectado por regex (ex.: `f/2.8`, `ISO 800`) |
 | `threshold` | Limiar usado para decidir `technical` (constante `THRESHOLD_TECNICO = 0.48`) |
+| `low_confidence` | `true` se `confidence` da âncora vencedora ficou abaixo de `confidence_threshold` — sinal de que a categoria pode não ser confiável (input ambíguo, fora do domínio, etc.) |
+| `confidence_threshold` | Limiar usado para decidir `low_confidence` (constante `CONFIDENCE_THRESHOLD_LOW = 0.45`) |
 | `top_matches` | As 5 âncoras mais próximas, para debug/observabilidade |
 | `mistral_response` | Preenchido apenas quando `technical=true`: resposta do Mistral usando o prompt `base`. `null` se não técnico ou se o fallback está desabilitado |
+
+### Thresholds internos
+
+| Constante | Valor | Usado para |
+|---|---|---|
+| `THRESHOLD_TECNICO` | `0.48` | Decidir se o input é um pedido técnico (score contra a âncora `__tecnico__`) |
+| `CONFIDENCE_THRESHOLD_LOW` | `0.45` | Sinalizar `low_confidence=true` quando nem a melhor âncora tem uma similaridade confiável |
+
+Ambas definidas em `src/domain/application/use_cases/categorize_text.py`.
+
+## Logs
+
+Cada chamada a `categorize()` loga o pipeline passo a passo (nível `INFO` por padrão, veja `src/shared/utils/logger.py`):
+
+```
+[step 1/4] categorizing text='mostre a melhor foto melancolica' (len=34)
+[step 2/4] ranked 11 unique anchors; top-5: Conexão (Close-up)=0.583, Distanciamento (Low-key)=0.553, ...
+[step 3/4] technical check: __tecnico__ score=0.279 vs threshold=0.48 -> technical=False
+[step 4/4] result: category=Conexão confidence=0.583 (>= threshold=0.45)
+```
+
+Quando o input é técnico, aparecem também os passos de roteamento pro Mistral (`[step 4/4] routing technical input to Mistral...` / `Mistral responded (N chars)`). Se a confiança ficar abaixo do threshold, o passo final vira um `WARNING` (`low confidence: best match ... < threshold=0.45`) em vez de `INFO`.
 
 **Response — 400** (texto vazio)
 

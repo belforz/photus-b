@@ -1,0 +1,178 @@
+{
+  "threshold_tecnico": 0.48,
+  "confidence_threshold_low": 0.45,
+  "target_case": [
+    {
+      "text": "sessão de fotos de estúdio com o executivo sorrindo abertamente para a câmera, clima descontraído",
+      "expected": "Conexão (Close-up)",
+      "before": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.7218601703643799,
+        "technical": false,
+        "technical_score": 0.2952705919742584
+      },
+      "after": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.865432620048523,
+        "technical": false,
+        "technical_score": 0.2952705919742584
+      }
+    }
+  ],
+  "r3_regression_check": [
+    {
+      "text": "iluminação de estúdio limpa, roupa formal",
+      "expected": "Corporativo (Focado)",
+      "before": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5522037148475647,
+        "technical": false,
+        "technical_score": 0.46239355206489563
+      },
+      "after": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5522037148475647,
+        "technical": false,
+        "technical_score": 0.46239355206489563
+      }
+    }
+  ],
+  "guard_cases": [
+    {
+      "text": "foto de perfil para o site da empresa, sorriso discreto, fundo neutro de estúdio",
+      "expected": "Corporativo (Focado)",
+      "before": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.7123041152954102,
+        "technical": false,
+        "technical_score": 0.2736148238182068
+      },
+      "after": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.7123041152954102,
+        "technical": false,
+        "technical_score": 0.2736148238182068
+      }
+    },
+    {
+      "text": "cena doméstica mas visivelmente produzida e estilizada",
+      "expected": "Solenidade (Estase)",
+      "before": {
+        "top1_anchor": "Simplicidade (Cotidiano)",
+        "top1_score": 0.6203590035438538,
+        "technical": true,
+        "technical_score": 0.5073951482772827
+      },
+      "after": {
+        "top1_anchor": "Simplicidade (Cotidiano)",
+        "top1_score": 0.6203590035438538,
+        "technical": true,
+        "technical_score": 0.5073951482772827
+      }
+    },
+    {
+      "text": "rosto pequeno e disperso em meio a uma multidão",
+      "expected": "Conflito (Caos)",
+      "before": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.5959256887435913,
+        "technical": false,
+        "technical_score": 0.19233238697052002
+      },
+      "after": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.5959256887435913,
+        "technical": false,
+        "technical_score": 0.19233238697052002
+      }
+    },
+    {
+      "text": "retrato de estúdio emotivo, com olhar vivo",
+      "expected": "Conexão (Close-up)",
+      "before": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.7148662209510803,
+        "technical": false,
+        "technical_score": 0.28760287165641785
+      },
+      "after": {
+        "top1_anchor": "Conexão (Close-up)",
+        "top1_score": 0.7148662209510803,
+        "technical": false,
+        "technical_score": 0.28760287165641785
+      }
+    },
+    {
+      "text": "cena social mas estática e formal, tipo coquetel corporativo",
+      "expected": "Corporativo (Focado)",
+      "before": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.6551682353019714,
+        "technical": false,
+        "technical_score": 0.3608876168727875
+      },
+      "after": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.6551682353019714,
+        "technical": false,
+        "technical_score": 0.3608876168727875
+      }
+    }
+  ],
+  "group_a_corporativo": [
+    {
+      "text": "headshot com fundo neutro de estúdio",
+      "expected": "Corporativo (Focado)",
+      "before": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5473476052284241,
+        "technical": true,
+        "technical_score": 0.4946528673171997
+      },
+      "after": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5473476052284241,
+        "technical": true,
+        "technical_score": 0.4946528673171997
+      }
+    },
+    {
+      "text": "iluminação de estúdio limpa, roupa formal",
+      "expected": "Corporativo (Focado)",
+      "before": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5522037148475647,
+        "technical": false,
+        "technical_score": 0.46239355206489563
+      },
+      "after": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5522037148475647,
+        "technical": false,
+        "technical_score": 0.46239355206489563
+      }
+    },
+    {
+      "text": "foto que colocaria no LinkedIn sem hesitar",
+      "expected": "Corporativo (Focado)",
+      "before": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5584883093833923,
+        "technical": false,
+        "technical_score": 0.2723426818847656
+      },
+      "after": {
+        "top1_anchor": "Corporativo (Focado)",
+        "top1_score": 0.5584883093833923,
+        "technical": false,
+        "technical_score": 0.2723426818847656
+      }
+    }
+  ],
+  "group_a_full_regressions": [],
+  "group_a_full_identical_count": 30,
+  "group_a_full_total": 30,
+  "tecnico_cross_check_regressions": [],
+  "tecnico_cross_check_identical_count": 9,
+  "criterio_atingido": true
+}

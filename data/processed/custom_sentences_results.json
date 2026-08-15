@@ -1,36 +1,36 @@
 {
   "results": [
     {
-      "text": "mostre a melhor foto melancolica",
+      "text": "oi",
       "top": [
         {
-          "anchor_id": "Conexão (Close-up)",
-          "anchor_phrase": "foto de rosto humano em plano fechado, close extremo, sorriso, olhar direto, expressão emocional",
-          "score": 0.5831145644187927
+          "anchor_id": "Sublime (Paisagem)",
+          "anchor_phrase": "épico, grandioso, majestoso, tirar o fôlego, imensurável, contemplativo",
+          "score": 0.43984875082969666
         },
         {
-          "anchor_id": "Distanciamento (Low-key)",
-          "anchor_phrase": "foto escura, sombria e pesada",
-          "score": 0.552653431892395
-        },
-        {
-          "anchor_id": "Nostalgia (Analógico)",
-          "anchor_phrase": "fotografia com cara de antiga, velha, de outro tempo",
-          "score": 0.5343046188354492
-        },
-        {
-          "anchor_id": "Noturno (Festa)",
-          "anchor_phrase": "foto de festa, balada, celebração, evento social à noite",
-          "score": 0.5059172511100769
+          "anchor_id": "Vitalidade (Ação)",
+          "anchor_phrase": "corrida, salto, esforço",
+          "score": 0.4296695590019226
         },
         {
           "anchor_id": "Conflito (Caos)",
-          "anchor_phrase": "sensação de conflito, ambiente carregado, cena pesada, perturbador visualmente",
-          "score": 0.49581605195999146
+          "anchor_phrase": "cena caótica, tensão",
+          "score": 0.3758013844490051
+        },
+        {
+          "anchor_id": "Distanciamento (Low-key)",
+          "anchor_phrase": "solitário, isolado, triste, frio, melancólico, silencioso, distante",
+          "score": 0.3513655960559845
+        },
+        {
+          "anchor_id": "Solenidade (Estase)",
+          "anchor_phrase": "sem bagunça, sem movimento, tudo no lugar, paz visual, elegante e contido",
+          "score": 0.34855127334594727
         }
       ],
       "technical": false,
-      "technical_score": 0.2785519063472748,
+      "technical_score": 0.22315731644630432,
       "mistral_response": null
     }
   ]

@@ -60,19 +60,13 @@ if __name__ == "__main__":
     "Solenidade (Estase)": (
         "foto parada e silenciosa. ambiente organizado, limpo e simétrico. "
         "calmo, sereno, tranquilo, neutro, minimalista, equilibrado, suave. "
-        "sem bagunça, sem movimento, tudo no lugar, paz visual, elegante e contido. "
-
-        # contra o vazamento pra Simplicidade com "cena doméstica produzida/estilizada" (r5, afirmativa)
-        "cena claramente produzida e estilizada, composição encenada com intenção estética evidente, resultado de produção fotográfica cuidadosa e deliberada."
+        "sem bagunça, sem movimento, tudo no lugar, paz visual, elegante e contido."
     ),
 
     "Conexão (Close-up)": (
         "foto de rosto humano em plano fechado, close extremo, sorriso, olhar direto, expressão emocional. "
         "feliz, alegre, acolhedor, caloroso, amigável, empático, íntimo, carinhoso. "
-        "aproximação, afeto, presença humana, emoção no rosto, calor humano. "
-
-        # contra o vazamento de Corporativo com "executivo sorrindo/descontraído" (r4, isolada da rodada 3)
-        "executivo sorrindo abertamente e à vontade durante a foto, expressão espontânea e descontraída, calor humano mesmo em contexto de trabalho."
+        "aproximação, afeto, presença humana, emoção no rosto, calor humano."
     ),
 
     "Distanciamento (Low-key)": (
@@ -90,10 +84,7 @@ if __name__ == "__main__":
     "Conflito (Caos)": (
         "foto de confusão e desordem urbana, rua suja e multidão agitada. cena caótica, tensão. "
         "bagunçado, áspero, agressivo, estressante, poluído, urbano e hostil. "
-        "sensação de conflito, ambiente carregado, cena pesada, perturbador visualmente. "
-
-        # contra o vazamento pra Solenidade com "sobrecarga sensorial, nada no lugar" (r5, afirmativa)
-        "cada elemento fora do lugar, cena bagunçada e caótica, objetos espalhados ao acaso por toda a superfície."
+        "sensação de conflito, ambiente carregado, cena pesada, perturbador visualmente."
     ),
 
     "Nostalgia (Analógico)": (
@@ -113,13 +104,7 @@ if __name__ == "__main__":
     "Corporativo (Focado)": (
         "foto profissional para currículo, linkedin ou apresentação de trabalho. "
         "sério, confiável, formal, neutro, limpo, estúdio, fundo liso. "
-        "imagem de executivo, chefe, funcionário, empresário, headshot, foto de perfil profissional. "
-
-        # contra o vazamento pra Conexão (Close-up): aperta contra emoção/intimidade
-        "pose formal e distante para estúdio, expressão neutra e contida, sem intimidade ou emoção pessoal no olhar. "
-
-        # contra o vazamento pra Noturno (Festa): abre pra evento social formal, ancorado em sério/comedido
-        "evento corporativo formal, coquetel ou confraternização de trabalho, comportamento sério e comedido, sem euforia nem dança."
+        "imagem de executivo, chefe, funcionário, empresário, headshot, foto de perfil profissional."
     ),
 
     "Noturno (Festa)": (
@@ -128,31 +113,45 @@ if __name__ == "__main__":
         "encontro, bebida, show, rave, clube, farra, agito, turma reunida, comemoração."
     ),
     "__tecnico__": (
-        # abertura / f-stop / bokeh, em prosa
-        "deixa o fundo desfocado e borrado, quero bokeh forte, abertura grande, profundidade de campo rasa. "
+        # nomenclatura formal de câmera e óptica
+        "abertura, diafragma, f-stop, lente, milímetros, objetiva, focal, zoom, teleobjetiva, "
+        "grande angular, fisheye, macro, tilt-shift, prime, kit lens, bokeh, desfoque, "
+        "profundidade de campo, rasa, profunda, foco seletivo, foco suave, foco nítido. "
 
-        # exposição / histograma, em prosa
-        "como ajustar a exposição pra não estourar as luzes, olhar o histograma, controlar os realces. "
+        # exposição e luz técnica
+        "exposição, subexposto, superexposto, overexposed, underexposed, high key, low key, "
+        "histograma, zebra, clipping, queimado, estourado tecnicamente, recuperar sombras, "
+        "recuperar luzes, dynamic range, faixa dinâmica, latitude de exposição. "
 
-        # shutter speed, em prosa
-        "diminuir a velocidade do obturador pra borrar o movimento, ou aumentar pra congelar a ação. "
+        # velocidade e movimento técnico
+        "velocidade do obturador, shutter speed, tempo de exposição, congelar movimento, "
+        "motion blur, rastro de luz, longa exposição, bulb, 1/1000, 1/500, 1/60, 30 segundos. "
 
-        # ISO / ruído, em prosa
-        "configurar o ISO mais alto sem gerar ruído demais na imagem. "
+        # sensibilidade e ruído técnico
+        "ISO, sensibilidade, ruído digital, grain técnico, noise, redução de ruído, "
+        "ISO baixo, ISO alto, ISO nativo, clean ISO, sensor, full frame, crop, APS-C, micro quatro terços. "
 
-        # iluminação de estúdio, em prosa (equipamento explícito, pra não capturar cena/vibe genérica de luz)
-        "configurar softbox e flash de estúdio, ajustar a potência do strobe e a razão entre luz principal e luz de preenchimento. "
+        # iluminação de estúdio e equipamento
+        "softbox, octobox, beauty dish, refletor, difusor, strobe, flash externo, speedlight, "
+        "luz contínua, LED, tungstênio, fluorescente, monolight, pack e cabeça, "
+        "luz principal, luz de preenchimento, contraluz, hair light, rim light, "
+        "razão de iluminação, Rembrandt, loop, split, butterfly, clamshell. "
 
-        # temperatura de cor / kelvin, em prosa
-        "ajustar o balanço de branco, temperatura de cor em kelvin, deixar o tom mais quente ou mais frio. "
+        # cor e temperatura técnica
+        "temperatura de cor, kelvin, balanço de branco, auto white balance, "
+        "luz fria, luz neutra, luz quente, daylight, tungsten, fluorescent, shade, cloudy, "
+        "matiz, viragem, LUT, perfil de cor, picture profile, log, flat, S-log, C-log. "
 
-        # raw / edição, em prosa
-        "editar o arquivo raw, ajustar curvas e níveis na pós-produção. "
+        # pós-processamento e técnica digital
+        "raw, dng, jpeg, compressão, edição técnica, lightroom, capture one, darktable, "
+        "curva de tons, curva S, máscaras de luminância, dodge and burn, frequência de separação, "
+        "skin retouch, healing, clone stamp, redução de ruído técnica, sharpen, unsharp mask. "
 
-        # composição / proporção, em prosa
-        "aplicar regra dos terços, proporção áurea, enquadramento técnico da composição. "
+        # composição técnica
+        "regra dos terços, proporção áurea, linha do horizonte, ponto de fuga, "
+        "enquadramento, corte, crop técnico, proporção de aspecto, 16x9, 3x2, 4x5, quadrado. "
 
-        # descrições técnicas em linguagem informal de fotógrafo (mantida como estava)
+        # descrições técnicas em linguagem informal de fotógrafo
         "deixa o fundo borrado, fundo sumiu, fundo sumir, fundo desfocado, desfoca o fundo, "
         "congelar o movimento, capturar o movimento, motion, rastro, blur intencional, "
         "abertura bem aberta, abrir o diafragma, fechar o diafragma, expor para as sombras, "

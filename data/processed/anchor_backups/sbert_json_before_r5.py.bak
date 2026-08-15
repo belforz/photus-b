@@ -60,10 +60,7 @@ if __name__ == "__main__":
     "Solenidade (Estase)": (
         "foto parada e silenciosa. ambiente organizado, limpo e simétrico. "
         "calmo, sereno, tranquilo, neutro, minimalista, equilibrado, suave. "
-        "sem bagunça, sem movimento, tudo no lugar, paz visual, elegante e contido. "
-
-        # contra o vazamento pra Simplicidade com "cena doméstica produzida/estilizada" (r5, afirmativa)
-        "cena claramente produzida e estilizada, composição encenada com intenção estética evidente, resultado de produção fotográfica cuidadosa e deliberada."
+        "sem bagunça, sem movimento, tudo no lugar, paz visual, elegante e contido."
     ),
 
     "Conexão (Close-up)": (
@@ -90,10 +87,7 @@ if __name__ == "__main__":
     "Conflito (Caos)": (
         "foto de confusão e desordem urbana, rua suja e multidão agitada. cena caótica, tensão. "
         "bagunçado, áspero, agressivo, estressante, poluído, urbano e hostil. "
-        "sensação de conflito, ambiente carregado, cena pesada, perturbador visualmente. "
-
-        # contra o vazamento pra Solenidade com "sobrecarga sensorial, nada no lugar" (r5, afirmativa)
-        "cada elemento fora do lugar, cena bagunçada e caótica, objetos espalhados ao acaso por toda a superfície."
+        "sensação de conflito, ambiente carregado, cena pesada, perturbador visualmente."
     ),
 
     "Nostalgia (Analógico)": (

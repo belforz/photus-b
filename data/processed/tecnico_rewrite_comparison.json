@@ -1,0 +1,119 @@
+{
+  "threshold_tecnico": 0.48,
+  "confidence_threshold_low": 0.45,
+  "tecnico_rows": [
+    {
+      "text": "f/1.8, ISO 800, 1/500s",
+      "is_new_case": false,
+      "score_before": 1.0,
+      "technical_before": true,
+      "top1_before": "__tecnico__",
+      "top1_score_before": 0.4205138385295868,
+      "score_after": 1.0,
+      "technical_after": true,
+      "top1_after": "__tecnico__",
+      "top1_score_after": 0.45383936166763306
+    },
+    {
+      "text": "deixa o fundo borrado e o rosto nítido",
+      "is_new_case": false,
+      "score_before": 0.4463091194629669,
+      "technical_before": false,
+      "top1_before": "Conexão (Close-up)",
+      "top1_score_before": 0.5458489656448364,
+      "score_after": 0.49903371930122375,
+      "technical_after": true,
+      "top1_after": "Conexão (Close-up)",
+      "top1_score_after": 0.5458489656448364
+    },
+    {
+      "text": "profundidade de campo rasa",
+      "is_new_case": false,
+      "score_before": 0.4589998424053192,
+      "technical_before": false,
+      "top1_before": "Sublime (Paisagem)",
+      "top1_score_before": 0.49324101209640503,
+      "score_after": 0.6711997389793396,
+      "technical_after": true,
+      "top1_after": "__tecnico__",
+      "top1_score_after": 0.6711997389793396
+    },
+    {
+      "text": "subexposição intencional em low-key",
+      "is_new_case": false,
+      "score_before": 0.40237003564834595,
+      "technical_before": false,
+      "top1_before": "__tecnico__",
+      "top1_score_before": 0.40237003564834595,
+      "score_after": 0.2929924428462982,
+      "technical_after": false,
+      "top1_after": "Solenidade (Estase)",
+      "top1_score_after": 0.2949267327785492
+    },
+    {
+      "text": "estoure o brilho dos realces",
+      "is_new_case": false,
+      "score_before": 0.43173491954803467,
+      "technical_before": false,
+      "top1_before": "Simplicidade (Cotidiano)",
+      "top1_score_before": 0.6723853945732117,
+      "score_after": 0.5351954698562622,
+      "technical_after": true,
+      "top1_after": "Simplicidade (Cotidiano)",
+      "top1_score_after": 0.6723853945732117
+    },
+    {
+      "text": "quero saber o ajuste de exposição pra não estourar as luzes",
+      "is_new_case": true,
+      "score_before": 0.4576945900917053,
+      "technical_before": false,
+      "top1_before": "Simplicidade (Cotidiano)",
+      "top1_score_before": 0.49326276779174805,
+      "score_after": 0.805790364742279,
+      "technical_after": true,
+      "top1_after": "__tecnico__",
+      "top1_score_after": 0.805790364742279
+    },
+    {
+      "text": "como configuro o ISO pra reduzir ruído na foto",
+      "is_new_case": true,
+      "score_before": 0.6206193566322327,
+      "technical_before": true,
+      "top1_before": "__tecnico__",
+      "top1_score_before": 0.6206193566322327,
+      "score_after": 0.8602189421653748,
+      "technical_after": true,
+      "top1_after": "__tecnico__",
+      "top1_score_after": 0.8602189421653748
+    },
+    {
+      "text": "deixa o assunto nítido e o fundo totalmente desfocado",
+      "is_new_case": true,
+      "score_before": 0.3331087529659271,
+      "technical_before": false,
+      "top1_before": "Distanciamento (Low-key)",
+      "top1_score_before": 0.4184678792953491,
+      "score_after": 0.3901139497756958,
+      "technical_after": false,
+      "top1_after": "Distanciamento (Low-key)",
+      "top1_score_after": 0.4184678792953491
+    },
+    {
+      "text": "ajustar a temperatura de cor pra ficar mais quente",
+      "is_new_case": true,
+      "score_before": 0.5461488366127014,
+      "technical_before": true,
+      "top1_before": "__tecnico__",
+      "top1_score_before": 0.5461488366127014,
+      "score_after": 0.8233206272125244,
+      "technical_after": true,
+      "top1_after": "__tecnico__",
+      "top1_score_after": 0.8233206272125244
+    }
+  ],
+  "confident_misroutes": [],
+  "group_a_regressions": [],
+  "group_a_identical_count": 30,
+  "group_a_total": 30,
+  "criterio_atingido": true
+}
