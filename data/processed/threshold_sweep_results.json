@@ -1,0 +1,373 @@
+{
+  "total_cases": 46,
+  "total_corretos": 34,
+  "total_errados": 12,
+  "combos": [
+    {
+      "name": "score-so, frouxo",
+      "score_min": 0.45,
+      "gap_min": 0.0,
+      "resgatados": [
+        "pessoa lendo sem posar"
+      ],
+      "custo": [],
+      "nao_resgatados": [
+        "produto isolado em fundo branco",
+        "sobrecarga sensorial, nada no lugar",
+        "grão de filme genuíno em retrato quase preto e branco",
+        "show de rock em ambiente escuro",
+        "atleta com expressão de dor extrema no rosto",
+        "multidão animada mas com clima positivo, sem tensão",
+        "estética vintage só que digitalmente perfeita, sem grão real",
+        "retrato próximo e emotivo em ambiente de estúdio formal",
+        "pessoa em roupa profissional mas em ambiente real, não estúdio",
+        "rosto pequeno e dividido em meio a uma multidão",
+        "pessoa sozinha ao entardecer, sombras longas"
+      ]
+    },
+    {
+      "name": "score-so, agressivo",
+      "score_min": 0.6,
+      "gap_min": 0.0,
+      "resgatados": [
+        "produto isolado em fundo branco",
+        "pessoa lendo sem posar",
+        "sobrecarga sensorial, nada no lugar",
+        "atleta com expressão de dor extrema no rosto",
+        "estética vintage só que digitalmente perfeita, sem grão real"
+      ],
+      "custo": [
+        "corrida com respingos de água",
+        "energia explosiva ao meio-dia",
+        "olhos fechados, luz de contorno, mão tocando o queixo",
+        "multidão densa vista de cima",
+        "headshot com fundo neutro de estúdio",
+        "iluminação de estúdio limpa, roupa formal",
+        "foto que colocaria no LinkedIn sem hesitar",
+        "show com multidão eufórica",
+        "brinde entre amigos à noite"
+      ],
+      "nao_resgatados": [
+        "grão de filme genuíno em retrato quase preto e branco",
+        "show de rock em ambiente escuro",
+        "multidão animada mas com clima positivo, sem tensão",
+        "retrato próximo e emotivo em ambiente de estúdio formal",
+        "pessoa em roupa profissional mas em ambiente real, não estúdio",
+        "rosto pequeno e dividido em meio a uma multidão",
+        "pessoa sozinha ao entardecer, sombras longas"
+      ]
+    },
+    {
+      "name": "score-so, muito agressivo",
+      "score_min": 0.7,
+      "gap_min": 0.0,
+      "resgatados": [
+        "produto isolado em fundo branco",
+        "pessoa lendo sem posar",
+        "sobrecarga sensorial, nada no lugar",
+        "grão de filme genuíno em retrato quase preto e branco",
+        "show de rock em ambiente escuro",
+        "atleta com expressão de dor extrema no rosto",
+        "multidão animada mas com clima positivo, sem tensão",
+        "estética vintage só que digitalmente perfeita, sem grão real",
+        "pessoa em roupa profissional mas em ambiente real, não estúdio",
+        "rosto pequeno e dividido em meio a uma multidão"
+      ],
+      "custo": [
+        "atleta no ápice do salto sob sol forte",
+        "corrida com respingos de água",
+        "energia explosiva ao meio-dia",
+        "ambiente minimalista vazio e simétrico",
+        "silêncio visual, nada em movimento",
+        "olhos fechados, luz de contorno, mão tocando o queixo",
+        "corredor vazio e escuro",
+        "silhueta isolada, ninguém por perto",
+        "cozinha iluminada por luz de janela, sem produção",
+        "cena doméstica comum sem drama",
+        "multidão densa vista de cima",
+        "oceano sem fim, céu épico",
+        "montanha ao pôr do sol dramático",
+        "headshot com fundo neutro de estúdio",
+        "iluminação de estúdio limpa, roupa formal",
+        "foto que colocaria no LinkedIn sem hesitar",
+        "pista de dança com luzes neon e grupo animado",
+        "show com multidão eufórica",
+        "brinde entre amigos à noite",
+        "cena doméstica mas visivelmente produzida e estilizada",
+        "ambiente noturno só que festivo, não tenso",
+        "cena social mas estática e formal, tipo coquetel corporativo"
+      ],
+      "nao_resgatados": [
+        "retrato próximo e emotivo em ambiente de estúdio formal",
+        "pessoa sozinha ao entardecer, sombras longas"
+      ]
+    },
+    {
+      "name": "gap-so, frouxo",
+      "score_min": 0.0,
+      "gap_min": 0.05,
+      "resgatados": [
+        "produto isolado em fundo branco",
+        "pessoa lendo sem posar",
+        "sobrecarga sensorial, nada no lugar",
+        "pessoa em roupa profissional mas em ambiente real, não estúdio"
+      ],
+      "custo": [
+        "atleta no ápice do salto sob sol forte",
+        "olhos fechados, luz de contorno, mão tocando o queixo",
+        "headshot com fundo neutro de estúdio",
+        "iluminação de estúdio limpa, roupa formal",
+        "pista de dança com luzes neon e grupo animado",
+        "cena estática mas com rosto próximo e emocional",
+        "ambiente escuro mas festivo e animado",
+        "ambiente noturno só que festivo, não tenso"
+      ],
+      "nao_resgatados": [
+        "grão de filme genuíno em retrato quase preto e branco",
+        "show de rock em ambiente escuro",
+        "atleta com expressão de dor extrema no rosto",
+        "multidão animada mas com clima positivo, sem tensão",
+        "estética vintage só que digitalmente perfeita, sem grão real",
+        "retrato próximo e emotivo em ambiente de estúdio formal",
+        "rosto pequeno e dividido em meio a uma multidão",
+        "pessoa sozinha ao entardecer, sombras longas"
+      ]
+    },
+    {
+      "name": "gap-so, agressivo",
+      "score_min": 0.0,
+      "gap_min": 0.1,
+      "resgatados": [
+        "produto isolado em fundo branco",
+        "pessoa lendo sem posar",
+        "sobrecarga sensorial, nada no lugar",
+        "grão de filme genuíno em retrato quase preto e branco",
+        "estética vintage só que digitalmente perfeita, sem grão real",
+        "pessoa em roupa profissional mas em ambiente real, não estúdio",
+        "rosto pequeno e dividido em meio a uma multidão"
+      ],
+      "custo": [
+        "atleta no ápice do salto sob sol forte",
+        "energia explosiva ao meio-dia",
+        "silêncio visual, nada em movimento",
+        "olhos fechados, luz de contorno, mão tocando o queixo",
+        "silhueta isolada, ninguém por perto",
+        "cena doméstica comum sem drama",
+        "multidão densa vista de cima",
+        "montanha ao pôr do sol dramático",
+        "headshot com fundo neutro de estúdio",
+        "iluminação de estúdio limpa, roupa formal",
+        "foto que colocaria no LinkedIn sem hesitar",
+        "pista de dança com luzes neon e grupo animado",
+        "show com multidão eufórica",
+        "cena estática mas com rosto próximo e emocional",
+        "montanha grandiosa fotografada à noite",
+        "ambiente escuro mas festivo e animado",
+        "cena doméstica mas visivelmente produzida e estilizada",
+        "ambiente noturno só que festivo, não tenso",
+        "cena antiga mas grandiosa, tipo paisagem histórica",
+        "paisagem grandiosa mas fotografada no escuro"
+      ],
+      "nao_resgatados": [
+        "show de rock em ambiente escuro",
+        "atleta com expressão de dor extrema no rosto",
+        "multidão animada mas com clima positivo, sem tensão",
+        "retrato próximo e emotivo em ambiente de estúdio formal",
+        "pessoa sozinha ao entardecer, sombras longas"
+      ]
+    },
+    {
+      "name": "score+gap, moderado",
+      "score_min": 0.5,
+      "gap_min": 0.08,
+      "resgatados": [
+        "produto isolado em fundo branco",
+        "pessoa lendo sem posar",
+        "sobrecarga sensorial, nada no lugar",
+        "grão de filme genuíno em retrato quase preto e branco",
+        "estética vintage só que digitalmente perfeita, sem grão real",
+        "pessoa em roupa profissional mas em ambiente real, não estúdio",
+        "rosto pequeno e dividido em meio a uma multidão"
+      ],
+      "custo": [
+        "atleta no ápice do salto sob sol forte",
+        "energia explosiva ao meio-dia",
+        "silêncio visual, nada em movimento",
+        "olhos fechados, luz de contorno, mão tocando o queixo",
+        "silhueta isolada, ninguém por perto",
+        "cena doméstica comum sem drama",
+        "multidão densa vista de cima",
+        "montanha ao pôr do sol dramático",
+        "headshot com fundo neutro de estúdio",
+        "iluminação de estúdio limpa, roupa formal",
+        "foto que colocaria no LinkedIn sem hesitar",
+        "pista de dança com luzes neon e grupo animado",
+        "show com multidão eufórica",
+        "cena estática mas com rosto próximo e emocional",
+        "montanha grandiosa fotografada à noite",
+        "ambiente escuro mas festivo e animado",
+        "cena doméstica mas visivelmente produzida e estilizada",
+        "ambiente noturno só que festivo, não tenso",
+        "paisagem grandiosa mas fotografada no escuro"
+      ],
+      "nao_resgatados": [
+        "show de rock em ambiente escuro",
+        "atleta com expressão de dor extrema no rosto",
+        "multidão animada mas com clima positivo, sem tensão",
+        "retrato próximo e emotivo em ambiente de estúdio formal",
+        "pessoa sozinha ao entardecer, sombras longas"
+      ]
+    },
+    {
+      "name": "score+gap, agressivo",
+      "score_min": 0.55,
+      "gap_min": 0.1,
+      "resgatados": [
+        "produto isolado em fundo branco",
+        "pessoa lendo sem posar",
+        "sobrecarga sensorial, nada no lugar",
+        "grão de filme genuíno em retrato quase preto e branco",
+        "estética vintage só que digitalmente perfeita, sem grão real",
+        "pessoa em roupa profissional mas em ambiente real, não estúdio",
+        "rosto pequeno e dividido em meio a uma multidão"
+      ],
+      "custo": [
+        "atleta no ápice do salto sob sol forte",
+        "corrida com respingos de água",
+        "energia explosiva ao meio-dia",
+        "silêncio visual, nada em movimento",
+        "olhos fechados, luz de contorno, mão tocando o queixo",
+        "silhueta isolada, ninguém por perto",
+        "cena doméstica comum sem drama",
+        "multidão densa vista de cima",
+        "montanha ao pôr do sol dramático",
+        "headshot com fundo neutro de estúdio",
+        "iluminação de estúdio limpa, roupa formal",
+        "foto que colocaria no LinkedIn sem hesitar",
+        "pista de dança com luzes neon e grupo animado",
+        "show com multidão eufórica",
+        "cena estática mas com rosto próximo e emocional",
+        "montanha grandiosa fotografada à noite",
+        "ambiente escuro mas festivo e animado",
+        "cena doméstica mas visivelmente produzida e estilizada",
+        "ambiente noturno só que festivo, não tenso",
+        "cena antiga mas grandiosa, tipo paisagem histórica",
+        "paisagem grandiosa mas fotografada no escuro"
+      ],
+      "nao_resgatados": [
+        "show de rock em ambiente escuro",
+        "atleta com expressão de dor extrema no rosto",
+        "multidão animada mas com clima positivo, sem tensão",
+        "retrato próximo e emotivo em ambiente de estúdio formal",
+        "pessoa sozinha ao entardecer, sombras longas"
+      ]
+    },
+    {
+      "name": "score+gap, muito agressivo",
+      "score_min": 0.6,
+      "gap_min": 0.12,
+      "resgatados": [
+        "produto isolado em fundo branco",
+        "pessoa lendo sem posar",
+        "sobrecarga sensorial, nada no lugar",
+        "grão de filme genuíno em retrato quase preto e branco",
+        "atleta com expressão de dor extrema no rosto",
+        "estética vintage só que digitalmente perfeita, sem grão real",
+        "pessoa em roupa profissional mas em ambiente real, não estúdio",
+        "rosto pequeno e dividido em meio a uma multidão"
+      ],
+      "custo": [
+        "atleta no ápice do salto sob sol forte",
+        "corrida com respingos de água",
+        "energia explosiva ao meio-dia",
+        "silêncio visual, nada em movimento",
+        "olhos fechados, luz de contorno, mão tocando o queixo",
+        "poste de luz solitário contra escuridão quase total",
+        "corredor vazio e escuro",
+        "silhueta isolada, ninguém por perto",
+        "cena doméstica comum sem drama",
+        "multidão densa vista de cima",
+        "montanha ao pôr do sol dramático",
+        "headshot com fundo neutro de estúdio",
+        "iluminação de estúdio limpa, roupa formal",
+        "foto que colocaria no LinkedIn sem hesitar",
+        "pista de dança com luzes neon e grupo animado",
+        "show com multidão eufórica",
+        "brinde entre amigos à noite",
+        "cena estática mas com rosto próximo e emocional",
+        "montanha grandiosa fotografada à noite",
+        "ambiente escuro mas festivo e animado",
+        "cena doméstica mas visivelmente produzida e estilizada",
+        "ambiente noturno só que festivo, não tenso",
+        "cena antiga mas grandiosa, tipo paisagem histórica",
+        "paisagem grandiosa mas fotografada no escuro"
+      ],
+      "nao_resgatados": [
+        "show de rock em ambiente escuro",
+        "multidão animada mas com clima positivo, sem tensão",
+        "retrato próximo e emotivo em ambiente de estúdio formal",
+        "pessoa sozinha ao entardecer, sombras longas"
+      ]
+    },
+    {
+      "name": "score+gap, extremo",
+      "score_min": 0.65,
+      "gap_min": 0.15,
+      "resgatados": [
+        "produto isolado em fundo branco",
+        "pessoa lendo sem posar",
+        "sobrecarga sensorial, nada no lugar",
+        "grão de filme genuíno em retrato quase preto e branco",
+        "show de rock em ambiente escuro",
+        "atleta com expressão de dor extrema no rosto",
+        "multidão animada mas com clima positivo, sem tensão",
+        "estética vintage só que digitalmente perfeita, sem grão real",
+        "pessoa em roupa profissional mas em ambiente real, não estúdio",
+        "rosto pequeno e dividido em meio a uma multidão",
+        "pessoa sozinha ao entardecer, sombras longas"
+      ],
+      "custo": [
+        "atleta no ápice do salto sob sol forte",
+        "corrida com respingos de água",
+        "energia explosiva ao meio-dia",
+        "ambiente minimalista vazio e simétrico",
+        "silêncio visual, nada em movimento",
+        "olhos fechados, luz de contorno, mão tocando o queixo",
+        "poste de luz solitário contra escuridão quase total",
+        "corredor vazio e escuro",
+        "silhueta isolada, ninguém por perto",
+        "cozinha iluminada por luz de janela, sem produção",
+        "cena doméstica comum sem drama",
+        "multidão densa vista de cima",
+        "oceano sem fim, céu épico",
+        "montanha ao pôr do sol dramático",
+        "headshot com fundo neutro de estúdio",
+        "iluminação de estúdio limpa, roupa formal",
+        "foto que colocaria no LinkedIn sem hesitar",
+        "pista de dança com luzes neon e grupo animado",
+        "show com multidão eufórica",
+        "brinde entre amigos à noite",
+        "cena estática mas com rosto próximo e emocional",
+        "montanha grandiosa fotografada à noite",
+        "ambiente escuro mas festivo e animado",
+        "cena doméstica mas visivelmente produzida e estilizada",
+        "ambiente noturno só que festivo, não tenso",
+        "cena antiga mas grandiosa, tipo paisagem histórica",
+        "paisagem grandiosa mas fotografada no escuro",
+        "cena social mas estática e formal, tipo coquetel corporativo"
+      ],
+      "nao_resgatados": [
+        "retrato próximo e emotivo em ambiente de estúdio formal"
+      ]
+    }
+  ],
+  "casos_confiante_errado_extremo": [
+    {
+      "text": "retrato próximo e emotivo em ambiente de estúdio formal",
+      "expected": "Conexão (Close-up)",
+      "top1": "Corporativo (Focado)",
+      "score": 0.706303596496582,
+      "gap": 0.15915238857269287
+    }
+  ]
+}

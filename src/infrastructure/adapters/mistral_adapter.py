@@ -2,12 +2,11 @@ import os
 import logging
 from typing import List, Dict, Optional, Union
 from mistralai import Mistral
-from infrastructure.config.settings import AppSettings
+from infrastructure.config.settings import settings
 from infrastructure.config.prompts.loader import load_prompt
 
 logger = logging.getLogger(__name__)
 
-VALID_MODELS = {"mistral-small-2508", "magistral-small-2509"}
 
 
 class APIError(Exception):
@@ -16,15 +15,15 @@ class APIError(Exception):
 class MistralConnector:
     def __init__(
         self,
-        model: str = "magistral-small-2509",
+        model: str = "ministral-14b-latest",
         api_key: Optional[str] = None,
     ):
-        self.api_key = api_key or AppSettings().MISTRAL_API_KEY
+        self.api_key = api_key or settings.MISTRAL_API_KEY
         if not self.api_key:
             raise ValueError("Key is not defined")
-        if model not in VALID_MODELS:
+        if model not in settings.LLM_VALID_MODELS:
             raise ValueError(
-                f"Invalid Model: '{model}'. Valid models: {sorted(VALID_MODELS)}"
+                f"Invalid Model: '{model}'. Valid models: {sorted(settings.LLM_VALID_MODELS)}"
             )
         self.model = model
         self.client = Mistral(api_key=self.api_key)
