@@ -1,3 +1,4 @@
-from .mistral_adapter import MistralConnector
+# from .mistral_adapter import MistralConnector
 from .sentence_transformer_adapter import SentenceTransformerAdapter
 from .spacy_adapter import SpacyAdapter
+from .litellm_adapter import LLMConnector

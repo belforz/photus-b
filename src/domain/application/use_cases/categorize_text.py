@@ -11,7 +11,8 @@ import unicodedata
 from dataclasses import dataclass, field
 from typing import Any, List, Optional
 
-from infrastructure.adapters.mistral_adapter import MistralConnector
+# from infrastructure.adapters.mistral_adapter import MistralConnector
+from infrastructure.adapters.litellm_adapter import LLMConnector
 from infrastructure.adapters.sentence_transformer_adapter import SentenceTransformerAdapter
 from infrastructure.config.prompts.loader import load_prompt
 from shared.utils import logger
@@ -108,6 +109,10 @@ class CategoryResult:
     """True se score/gap do top1 semântico ficaram abaixo do calibrado e o Mistral decidiu a âncora."""
     sbert_anchor_before_fallback: Optional[str] = None
     """Âncora que o SBERT tinha escolhido antes do desvio pro Mistral (só preenchido se `used_fallback=True`), pra auditoria/debug."""
+    fallback_reasoning: Optional[str] = None
+    """Campo `reasoning` que o Mistral devolveu no JSON do fallback semântico (preenchido sempre que
+    `call_semantic_fallback` roda, mesmo quando a âncora não resolve ou vem `AMBIGUO`), pra auditar se
+    a decisão de fato usou as regras de fronteira do prompt em vez de acertar por acaso."""
 
     def to_category_payload(self) -> dict[str, Any]:
         """Minimal payload shape consumed by downstream systems (Photus A)."""
@@ -129,15 +134,16 @@ class CategoryResult:
         payload = self.to_category_payload()
         payload["top_matches"] = [m.to_dict() for m in self.top_matches]
         payload["mistral_response"] = self.mistral_response
+        payload["fallback_reasoning"] = self.fallback_reasoning
         return payload
 
 
 class CategorizationService:
     """Loads anchors + the embedding model once and classifies free-text into a category.
 
-    Mistral is only used as a fallback for technical inputs and is instantiated
-    lazily (and optionally), since MISTRAL_API_KEY may not be configured in
-    every environment.
+    The LLM connector (litellm-backed) is only used as a fallback for technical inputs
+    and is instantiated lazily (and optionally), since MISTRAL_API_KEY may not be
+    configured in every environment.
     """
 
     def __init__(
@@ -149,26 +155,27 @@ class CategorizationService:
         self._anchors = self._load_anchors(anchors_path)
         self._embedder = embedder or SentenceTransformerAdapter()
         self._enable_mistral_fallback = enable_mistral_fallback
-        self._mistral: Optional[MistralConnector] = None
+        self._llm: Optional[LLMConnector] = None
 
     @staticmethod
     def _load_anchors(path: str) -> dict:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
 
-    def _mistral_connector(self) -> Optional[MistralConnector]:
+    def _llm_connector(self) -> Optional[LLMConnector]:
         if not self._enable_mistral_fallback:
             return None
-        if self._mistral is None:
+        if self._llm is None:
             try:
-                self._mistral = MistralConnector()
+                # self._llm = MistralConnector()
+                self._llm = LLMConnector()
             except ValueError:
                 logger.warning(
                     "MISTRAL_API_KEY not configured; disabling technical fallback."
                 )
                 self._enable_mistral_fallback = False
                 return None
-        return self._mistral
+        return self._llm
 
     def rank_anchors(self, embedding) -> List[CategoryMatch]:
         """Return anchors deduplicated by anchor_id, sorted by best cosine score."""
@@ -213,7 +220,7 @@ class CategorizationService:
 
     def call_mistral_technical(self, text: str) -> Optional[str]:
         """Send a technical input to Mistral using the technical system prompt."""
-        connector = self._mistral_connector()
+        connector = self._llm_connector()
         if connector is None:
             logger.warning("[step 4/4] Mistral fallback unavailable; skipping.")
             return None
@@ -259,9 +266,9 @@ class CategorizationService:
         """Ask Mistral to pick an anchor when the SBERT top1 is low-score or the gap to top2 is small.
 
         Uses the `fallback` prompt (lists the 10 semantic anchors + JSON schema with an `anchor`
-        field), reusing the same lazily-instantiated Mistral connector as the technical fallback.
+        field), reusing the same lazily-instantiated LLM connector as the technical fallback.
         """
-        connector = self._mistral_connector()
+        connector = self._llm_connector()
         if connector is None:
             logger.warning("[fallback] Mistral unavailable; keeping SBERT top1.")
             return None
@@ -333,6 +340,7 @@ class CategorizationService:
         final_confidence = best.score
         used_fallback = False
         sbert_anchor_before_fallback = None
+        fallback_reasoning = None
 
         should_fallback = best.score < THRESHOLD_SCORE_FALLBACK or (
             gap is not None and gap < THRESHOLD_GAP_FALLBACK
@@ -349,6 +357,8 @@ class CategorizationService:
             used_fallback = True
             fallback_result = self.call_semantic_fallback(text, ranked)
             match = fallback_result.get("match") if fallback_result else None
+            if fallback_result is not None:
+                fallback_reasoning = fallback_result["parsed"].get("reasoning")
             if match is not None:
                 final_match = match
                 parsed_confidence = fallback_result["parsed"].get("confidence")
@@ -377,4 +387,5 @@ class CategorizationService:
             mistral_response=mistral_response,
             used_fallback=used_fallback,
             sbert_anchor_before_fallback=sbert_anchor_before_fallback,
+            fallback_reasoning=fallback_reasoning,
         )

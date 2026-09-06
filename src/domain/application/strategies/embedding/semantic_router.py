@@ -8,7 +8,8 @@ import numpy as np
 
 from domain.application.strategies.embedding.base import IEmbedder
 from domain.entities.route_result import RouteResult
-from infrastructure.adapters.mistral_adapter import MistralConnector
+# from infrastructure.adapters.mistral_adapter import MistralConnector
+from infrastructure.adapters.litellm_adapter import LLMConnector
 from shared.utils import logger
 
 class SemanticRouter:
@@ -98,7 +99,8 @@ class SemanticRouter:
     def fallback_to_llm(self, query: str) -> RouteResult:
         if self._threshold is None and RouteResult is None:
             logger.warning("SemanticRouter: No anchors available, falling back to LLM.")
-            llm_connection = MistralConnector()
+            # llm_connection = MistralConnector()
+            llm_connection = LLMConnector()
             response = llm_connection.send_message_in_portuguese(query)
             return RouteResult(anchor_id=response, score=response.find("anchor_id"))  # Dummy score based on response content
         else:
