@@ -3,7 +3,7 @@
   "threshold_gap_fallback": 0.04,
   "total_cases": 46,
   "mistral_calls": 20,
-  "elapsed_seconds": 60.33465552330017,
+  "elapsed_seconds": 48.25635814666748,
   "rows": [
     {
       "group": "A",
@@ -28,7 +28,7 @@
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Vitalidade (Ação)",
       "final_category": "Vitalidade",
-      "final_confidence": 0.95,
+      "final_confidence": 0.5097430944442749,
       "final_correct": true
     },
     {
@@ -41,7 +41,7 @@
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Vitalidade (Ação)",
       "final_category": "Vitalidade",
-      "final_confidence": 0.95,
+      "final_confidence": 0.5763977766036987,
       "final_correct": true
     },
     {
@@ -92,9 +92,9 @@
       "sbert_correct": true,
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Conexão (Close-up)",
-      "final_category": "Conexão",
-      "final_confidence": 0.95,
-      "final_correct": true
+      "final_category": "Solenidade",
+      "final_confidence": 0.3181735873222351,
+      "final_correct": false
     },
     {
       "group": "A",
@@ -183,9 +183,9 @@
       "sbert_correct": false,
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Distanciamento (Low-key)",
-      "final_category": "Conexão",
-      "final_confidence": 0.95,
-      "final_correct": false
+      "final_category": "Simplicidade",
+      "final_confidence": 0.31463494896888733,
+      "final_correct": true
     },
     {
       "group": "A",
@@ -197,7 +197,7 @@
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Simplicidade (Cotidiano)",
       "final_category": "Simplicidade",
-      "final_confidence": 0.95,
+      "final_confidence": 0.6132082343101501,
       "final_correct": true
     },
     {
@@ -210,7 +210,7 @@
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Conflito (Caos)",
       "final_category": "Conflito",
-      "final_confidence": 0.95,
+      "final_confidence": 0.566192090511322,
       "final_correct": true
     },
     {
@@ -236,7 +236,7 @@
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Solenidade (Estase)",
       "final_category": "Conflito",
-      "final_confidence": 0.95,
+      "final_confidence": 0.4537821412086487,
       "final_correct": true
     },
     {
@@ -249,7 +249,7 @@
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Solenidade (Estase)",
       "final_category": "Nostalgia",
-      "final_confidence": 0.95,
+      "final_confidence": 0.4496038556098938,
       "final_correct": true
     },
     {
@@ -340,7 +340,7 @@
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Corporativo (Focado)",
       "final_category": "Corporativo",
-      "final_confidence": 0.95,
+      "final_confidence": 0.5522037148475647,
       "final_correct": true
     },
     {
@@ -353,7 +353,7 @@
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Corporativo (Focado)",
       "final_category": "Corporativo",
-      "final_confidence": 0.95,
+      "final_confidence": 0.5584883093833923,
       "final_correct": true
     },
     {
@@ -366,7 +366,7 @@
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Noturno (Festa)",
       "final_category": "Noturno",
-      "final_confidence": 0.95,
+      "final_confidence": 0.6343497037887573,
       "final_correct": true
     },
     {
@@ -379,7 +379,7 @@
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Noturno (Festa)",
       "final_category": "Noturno",
-      "final_confidence": 0.85,
+      "final_confidence": 0.5836663842201233,
       "final_correct": true
     },
     {
@@ -392,7 +392,7 @@
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Noturno (Festa)",
       "final_category": "Noturno",
-      "final_confidence": 0.95,
+      "final_confidence": 0.56510329246521,
       "final_correct": true
     },
     {
@@ -417,9 +417,9 @@
       "sbert_correct": false,
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Vitalidade (Ação)",
-      "final_category": "Vitalidade",
-      "final_confidence": 0.85,
-      "final_correct": false
+      "final_category": "Conflito",
+      "final_confidence": 0.3693433701992035,
+      "final_correct": true
     },
     {
       "group": "B",
@@ -457,7 +457,7 @@
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Noturno (Festa)",
       "final_category": "Noturno",
-      "final_confidence": 0.85,
+      "final_confidence": 0.7050879001617432,
       "final_correct": true
     },
     {
@@ -482,9 +482,9 @@
       "sbert_correct": false,
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Noturno (Festa)",
-      "final_category": "Noturno",
-      "final_confidence": 0.75,
-      "final_correct": false
+      "final_category": "Vitalidade",
+      "final_confidence": 0.40612056851387024,
+      "final_correct": true
     },
     {
       "group": "B",
@@ -496,7 +496,7 @@
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Noturno (Festa)",
       "final_category": "Noturno",
-      "final_confidence": 0.95,
+      "final_confidence": 0.6298245191574097,
       "final_correct": true
     },
     {
@@ -509,7 +509,7 @@
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Nostalgia (Analógico)",
       "final_category": "Nostalgia",
-      "final_confidence": 0.95,
+      "final_confidence": 0.5781049728393555,
       "final_correct": false
     },
     {
@@ -560,9 +560,9 @@
       "sbert_correct": false,
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Corporativo (Focado)",
-      "final_category": "Corporativo",
-      "final_confidence": 0.75,
-      "final_correct": false
+      "final_category": "Simplicidade",
+      "final_confidence": 0.6266133189201355,
+      "final_correct": true
     },
     {
       "group": "B",
@@ -586,9 +586,9 @@
       "sbert_correct": false,
       "used_fallback": true,
       "sbert_anchor_before_fallback": "Conexão (Close-up)",
-      "final_category": "Distanciamento",
-      "final_confidence": 0.85,
-      "final_correct": false
+      "final_category": "Conflito",
+      "final_confidence": 0.5551382303237915,
+      "final_correct": true
     },
     {
       "group": "B",

@@ -148,6 +148,7 @@ def main():
             "sbert_correct": sbert_correct,
             "used_fallback": r_live.used_fallback,
             "sbert_anchor_before_fallback": r_live.sbert_anchor_before_fallback,
+            "fallback_reasoning": r_live.fallback_reasoning,
             "final_category": r_live.category,
             "final_confidence": r_live.confidence,
             "final_correct": final_correct,
