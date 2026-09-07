@@ -16,8 +16,8 @@ def categorize(payload: CategorizeRequest, request: Request) -> CategorizeRespon
         result = service.categorize(payload.text)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
-    except Exception as e:
-        logger.error(f"Categorization failed for text={payload.text!r}: {e}", exc_info=True)
+    except Exception:
+        logger.opt(exception=True).error("Categorization failed for text={!r}", payload.text)
         raise HTTPException(status_code=500, detail="Failed to categorize text")
 
     return CategorizeResponse(**result.to_dict())

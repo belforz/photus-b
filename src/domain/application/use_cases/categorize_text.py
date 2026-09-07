@@ -241,8 +241,8 @@ class CategorizationService:
                 return None
             logger.info(f"[step 4/4] Mistral responded ({len(str(response))} chars)")
             return str(response)
-        except Exception as e:
-            logger.error(f"[step 4/4] Mistral request failed: {e}", exc_info=True)
+        except Exception:
+            logger.exception("[step 4/4] Mistral request failed")
             return None
 
     def _resolve_anchor_label(self, name: Any, ranked: List[CategoryMatch]) -> Optional[CategoryMatch]:
@@ -294,8 +294,8 @@ class CategorizationService:
                 matched.anchor_id if matched else None,
             )
             return {"raw": str(response), "parsed": parsed, "match": matched}
-        except Exception as e:
-            logger.error(f"[fallback] Mistral request failed: {e}", exc_info=True)
+        except Exception:
+            logger.exception("[fallback] Mistral request failed")
             return None
 
     def categorize(

@@ -13,6 +13,11 @@ class AppSettings(BaseSettings):
     LLM_MODEL_CURRENT_TEMPERATURE: float = Field(default=0.1, env="LLM_MODEL_CURRENT_TEMPERATURE")
     LLM_DEEPSEEK_API_KEY: str = Field(default="", env="LLM_DEEPSEEK_API_KEY")
     LLM_CLAUDE_API_KEY: str = Field(default="", env="LLM_CLAUDE_API_KEY")
+    LLM_GEMINI_API_KEY: str = Field(default="", env="LLM_GEMINI_API_KEY")
+    LLM_LLAMA_API_KEY: str = Field(default="", env="LLM_LLAMA_API_KEY")
+    LLM_GITHUB_API_KEY: str = Field(default="", env="LLM_GITHUB_API_KEY")
+    LLM_OPENROUTER_API_KEY: str = Field(default="", env="LLM_OPENROUTER_API_KEY")
+    LLM_KIMI_API_KEY: str = Field(default="", env="LLM_KIMI_API_KEY")
 
     class Config:
         env_file = ".env"

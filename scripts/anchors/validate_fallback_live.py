@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
-"""Validacao real (nao simulada) do fallback score/gap -> Mistral.
+"""Validacao real (nao simulada) do fallback score/gap -> LLM conector.
 
 Roda os 46 casos de roteamento semantico (Grupo A + B) do diagnostico original
-contra o CategorizationService real, com route_technical_to_mistral=True -
-ou seja, toda vez que score/gap dispararem a regra, o Mistral e chamado de
+contra o CategorizationService real, com route_technical_to_llm=True -
+ou seja, toda vez que score/gap dispararem a regra, o LLM conector e chamado de
 verdade. Reporta pra cada caso: resultado sem fallback (SBERT puro), se o
-fallback disparou, o que o Mistral respondeu, o resultado final, e se bateu
+fallback disparou, o que o LLM conector respondeu, o resultado final, e se bateu
 com a ancora esperada.
 
 Nao edita nenhuma ancora. So exercita o codigo real de categorize_text.py.
 """
 import json
 import os
+import re
 import sys
 import time
+from datetime import datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
@@ -23,6 +25,7 @@ from domain.application.use_cases.categorize_text import (  # noqa: E402
     THRESHOLD_SCORE_FALLBACK,
     THRESHOLD_GAP_FALLBACK,
 )
+from infrastructure.config.settings import settings  # noqa: E402
 
 ANCHORS_PATH = os.path.join(ROOT, "data", "raw", "knowledge_anchors.json")
 
@@ -101,7 +104,7 @@ GROUP_B = [
 
 def main():
     print(f"THRESHOLD_SCORE_FALLBACK={THRESHOLD_SCORE_FALLBACK}  THRESHOLD_GAP_FALLBACK={THRESHOLD_GAP_FALLBACK}\n")
-    print("Carregando servico com Mistral real (enable_mistral_fallback=True)...")
+    print("Carregando servico com LLM real (enable_llm_fallback=True)...")
     svc = CategorizationService(anchors_path=ANCHORS_PATH, enable_mistral_fallback=True)
 
     cases = []
@@ -158,9 +161,15 @@ def main():
     elapsed = time.time() - t_start
     print(f"\nTempo total: {elapsed:.1f}s | chamadas ao Mistral (fallback disparado): {mistral_calls}")
 
-    out_path = os.path.join(ROOT, "data", "processed", "fallback_live_validation.json")
+    model_slug = re.sub(r"[^a-zA-Z0-9]+", "-", settings.LLM_MODEL_CURRENT_NAME).strip("-")
+    timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+    out_path = os.path.join(
+        ROOT, "data", "processed", f"fallback_live_validation__{model_slug}__{timestamp}.json"
+    )
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump({
+            "model": settings.LLM_MODEL_CURRENT_NAME,
+            "timestamp": timestamp,
             "threshold_score_fallback": THRESHOLD_SCORE_FALLBACK,
             "threshold_gap_fallback": THRESHOLD_GAP_FALLBACK,
             "total_cases": len(cases),
