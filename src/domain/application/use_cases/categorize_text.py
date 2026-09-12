@@ -106,13 +106,9 @@ class CategoryResult:
     top_matches: List[CategoryMatch] = field(default_factory=list)
     mistral_response: Optional[str] = None
     used_fallback: bool = False
-    """True se score/gap do top1 semântico ficaram abaixo do calibrado e o Mistral decidiu a âncora."""
     sbert_anchor_before_fallback: Optional[str] = None
-    """Âncora que o SBERT tinha escolhido antes do desvio pro Mistral (só preenchido se `used_fallback=True`), pra auditoria/debug."""
     fallback_reasoning: Optional[str] = None
-    """Campo `reasoning` que o Mistral devolveu no JSON do fallback semântico (preenchido sempre que
-    `call_semantic_fallback` roda, mesmo quando a âncora não resolve ou vem `AMBIGUO`), pra auditar se
-    a decisão de fato usou as regras de fronteira do prompt em vez de acertar por acaso."""
+    technical_null_reason: Optional[str] = None
 
     def to_category_payload(self) -> dict[str, Any]:
         """Minimal payload shape consumed by downstream systems (Photus A)."""
@@ -135,6 +131,7 @@ class CategoryResult:
         payload["top_matches"] = [m.to_dict() for m in self.top_matches]
         payload["mistral_response"] = self.mistral_response
         payload["fallback_reasoning"] = self.fallback_reasoning
+        payload["technical_null_reason"] = self.technical_null_reason
         return payload
 
 
@@ -218,15 +215,23 @@ class CategorizationService:
         )
         return technical, score_tecnico
 
-    def call_mistral_technical(self, text: str) -> Optional[str]:
-        """Send a technical input to Mistral using the technical system prompt."""
+    def call_mistral_technical(self, text: str) -> Optional[dict]:
+        """Send a technical input to Mistral using the technical system prompt.
+
+        Returns `{"raw": <string response>, "null_reason": <str|None>}`. Mirrors the recovery
+        pattern of `call_semantic_fallback`: parses the JSON best-effort via `_parse_json_object`
+        and, if the response is malformed/off-schema, logs a warning with the raw response and
+        degrades to `null_reason=None` instead of raising — `anchor`/`intention`/`attributes`/
+        `reasoning` stay diagnostic-only (unparsed, inside `raw`) either way, since `category`
+        never comes from this response; only `null_reason` is read anywhere downstream.
+        """
         connector = self._llm_connector()
         if connector is None:
             logger.warning("[step 4/4] Mistral fallback unavailable; skipping.")
             return None
         try:
             logger.info("[step 4/4] routing technical input to Mistral...")
-            system_prompt = load_prompt("base")
+            system_prompt = load_prompt("technical")
             messages = [
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": text},
@@ -239,8 +244,13 @@ class CategorizationService:
             if response is None:
                 logger.warning(f"[step 4/4] Mistral returned None response for text: {text!r}")
                 return None
-            logger.info(f"[step 4/4] Mistral responded ({len(str(response))} chars)")
-            return str(response)
+            response_str = str(response)
+            logger.info(f"[step 4/4] Mistral responded ({len(response_str)} chars)")
+            parsed = _parse_json_object(response_str)
+            if parsed is None:
+                logger.warning(f"[step 4/4] could not parse Mistral JSON response: {response_str!r}")
+            null_reason = parsed.get("null_reason") if parsed is not None else None
+            return {"raw": response_str, "null_reason": null_reason}
         except Exception:
             logger.exception("[step 4/4] Mistral request failed")
             return None
@@ -313,8 +323,12 @@ class CategorizationService:
         technical, tech_score = self._is_technical(text, ranked)
 
         mistral_response = None
+        technical_null_reason = None
         if technical and route_technical_to_mistral:
-            mistral_response = self.call_mistral_technical(text)
+            technical_result = self.call_mistral_technical(text)
+            if technical_result is not None:
+                mistral_response = technical_result["raw"]
+                technical_null_reason = technical_result["null_reason"]
 
         best = ranked[0] if ranked else CategoryMatch("unknown", "", 0.0)
         second = ranked[1] if len(ranked) > 1 else None
@@ -388,4 +402,5 @@ class CategorizationService:
             used_fallback=used_fallback,
             sbert_anchor_before_fallback=sbert_anchor_before_fallback,
             fallback_reasoning=fallback_reasoning,
+            technical_null_reason=technical_null_reason,
         )

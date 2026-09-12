@@ -25,3 +25,7 @@ class CategorizeResponse(BaseModel):
     confidence_threshold: float
     top_matches: List[MatchSchema]
     mistral_response: Optional[str] = None
+    used_fallback: Optional[bool] = None
+    sbert_anchor_before_fallback: Optional[str] = None
+    fallback_reasoning: Optional[str] = None
+    technical_null_reason: Optional[str] = None
